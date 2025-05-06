@@ -12,43 +12,53 @@ import com.example.demo.repository.ProductRepository;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
-    ProductRepository repository;
+	@Autowired
+	ProductRepository repository;
 
-    @Override
-    public String saveProduct(Product product) {
-        if (repository.save(product) != null) {
-            return "Product Saved !!!";
-        } else {
-            return "Product Not Saved ...";
-        }
-    }
+	@Override
+	public String saveProduct(Product product) {
+		if (repository.save(product) != null) {
+			return "Product Saved !!!";
+		} else {
+			return "Product Not Saved ...";
+		}
+	}
 
-    @Override
-    public Product updateProduct(Product product) {
-        return repository.save(product);
-    }
+	@Override
+	public Product updateProduct(Product product) {
+		return repository.save(product);
+	}
 
-    @Override
-    public Product getProduct(int productId) {
-        Optional<Product> optional = repository.findById(productId);
-        return optional.orElse(null);
-    }
+	@Override
+	public Product getProduct(int productId) {
+		Optional<Product> optional = repository.findById(productId);
+		return optional.orElse(null);
+	}
 
-    @Override
-    public List<Product> getAllProducts() {
-        return repository.findAll();
-    }
+	@Override
+	public List<Product> getAllProducts() {
+		return repository.findAll();
+	}
 
 	@Override
 	public String deleteProduct(int productId) {
 		Optional<Product> product = repository.findById(productId);
-		if(product.isPresent()) {
+		if (product.isPresent()) {
 			repository.deleteById(productId);
 			return "Product Deleted Successfully!";
-		}
-		else {
+		} else {
 			return "Product Not Found!";
 		}
 	}
+
+	@Override
+	public List<Product> getProductsByCategory(String category) {
+		return repository.findByCategory(category);
+	}
+
+	@Override
+	public List<Product> getProductsByPriceRange(double minPrice, double maxPrice) {
+		return repository.findByPriceBetween(minPrice, maxPrice);
+	}
+
 }

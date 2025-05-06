@@ -15,4 +15,8 @@ public interface ProductService {
     public abstract List<Product> getAllProducts();
     
     public abstract String deleteProduct(int productId);
+    
+    public abstract List<Product> getProductsByCategory(String category);
+    
+    public abstract List<Product> getProductsByPriceRange(double minPrice, double maxPrice);
 }
