@@ -39,4 +39,16 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getAllProducts() {
         return repository.findAll();
     }
+
+	@Override
+	public String deleteProduct(int productId) {
+		Optional<Product> product = repository.findById(productId);
+		if(product.isPresent()) {
+			repository.deleteById(productId);
+			return "Product Deleted Successfully!";
+		}
+		else {
+			return "Product Not Found!";
+		}
+	}
 }

@@ -13,4 +13,6 @@ public interface ProductService {
     public abstract Product getProduct(int productId);
 
     public abstract List<Product> getAllProducts();
+    
+    public abstract String deleteProduct(int productId);
 }

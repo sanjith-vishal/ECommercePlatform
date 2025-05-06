@@ -34,4 +34,10 @@ public class ProductController {
     public List<Product> getAllProducts() {
         return service.getAllProducts();
     }
+    
+    @DeleteMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable("id") int productId) {
+    	return service.deleteProduct(productId);
+    }
+    
 }
