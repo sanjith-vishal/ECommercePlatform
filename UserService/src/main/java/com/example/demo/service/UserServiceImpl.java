@@ -12,34 +12,43 @@ import com.example.demo.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    UserRepository repository;
+	@Autowired
+	UserRepository repository;
 
-    @Override
-    public String saveUser(User user) {
-        repository.save(user);
-        return "User saved successfully!";
-    }
+	@Override
+	public String saveUser(User user) {
+		repository.save(user);
+		if (repository.save(user) != null) {
+			return "User Registered Successfully!";
+		} else {
+			return "User Registration Failed.";
+		}
+	}
 
-    @Override
-    public User updateUser(User user) {
-        return repository.save(user);
-    }
+	@Override
+	public User updateUser(User user) {
+		return repository.save(user);
+	}
 
-    @Override
-    public User getUser(int userId) {
-        Optional<User> optional = repository.findById(userId);
-        return optional.orElse(null);
-    }
+	@Override
+	public User getUserById(int userId) {
+		Optional<User> optional = repository.findById(userId);
+		return optional.orElse(null);
+	}
 
-    @Override
-    public List<User> getAllUsers() {
-        return repository.findAll();
-    }
+	@Override
+	public List<User> getAllUsers() {
+		return repository.findAll();
+	}
 
-    @Override
-    public String deleteUser(int userId) {
-        repository.deleteById(userId);
-        return "User deleted successfully!";
-    }
+	@Override
+	public String deleteUserById(int userId) {
+		if (repository.existsById(userId)) {
+			repository.deleteById(userId);
+			return "User Deleted Successfully!";
+		} else {
+			return "User Not Found.";
+		}
+	}
+
 }

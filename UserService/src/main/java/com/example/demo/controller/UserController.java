@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -16,18 +18,18 @@ public class UserController {
     UserService service;
 
     @PostMapping("/save")
-    public String saveUser(@RequestBody User user) {
+    public String saveUser(@Valid @RequestBody User user) {
         return service.saveUser(user);
     }
 
     @PutMapping("/update")
-    public User updateUser(@RequestBody User user) {
+    public User updateUser(@Valid @RequestBody User user) {
         return service.updateUser(user);
     }
 
     @GetMapping("/fetchById/{id}")
     public User getUser(@PathVariable("id") int userId) {
-        return service.getUser(userId);
+        return service.getUserById(userId);
     }
 
     @GetMapping("/fetchAll")
@@ -37,6 +39,6 @@ public class UserController {
 
     @DeleteMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") int userId) {
-        return service.deleteUser(userId);
+        return service.deleteUserById(userId);
     }
 }
