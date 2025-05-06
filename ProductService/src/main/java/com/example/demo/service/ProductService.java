@@ -1,0 +1,16 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.model.Product;
+
+public interface ProductService {
+
+    public abstract String saveProduct(Product product);
+
+    public abstract Product updateProduct(Product product);
+
+    public abstract Product getProduct(int productId);
+
+    public abstract List<Product> getAllProducts();
+}
