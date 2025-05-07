@@ -2,7 +2,8 @@ package com.example.demo.service;
 
 import java.util.List;
 
-//import com.example.demo.dto.ProductDTO;
+import com.example.demo.dto.CartItemWithProductDTO;
+import com.example.demo.dto.ProductDTO;
 import com.example.demo.model.CartItem;
 
 public interface CartItemService {
@@ -13,5 +14,6 @@ public interface CartItemService {
     public abstract List<CartItem> getAllCartItems();
     public abstract String deleteCartItemById(int cartItemId);
     public abstract List<CartItem> getCartItemsByUserId(int userId);
-	//public abstract ProductDTO fetchProductDetails(int productId);
+	public abstract ProductDTO fetchProductDetails(int productId);
+	public abstract CartItemWithProductDTO getCartItemWithProduct(int cartItemId); 
 }

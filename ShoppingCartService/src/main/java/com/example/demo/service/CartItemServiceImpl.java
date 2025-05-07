@@ -5,16 +5,17 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//import com.example.demo.dto.ProductDTO;
-//import com.example.demo.feign.ProductClient;
+import com.example.demo.dto.CartItemWithProductDTO;
+import com.example.demo.dto.ProductDTO;
+import com.example.demo.feign.ProductClient;
 import com.example.demo.model.CartItem;
 import com.example.demo.repository.CartItemRepository;
 
 @Service
 public class CartItemServiceImpl implements CartItemService {
 	
-//	@Autowired
-//	private ProductClient productClient;
+	@Autowired
+	private ProductClient productClient;
 
     @Autowired
     CartItemRepository repository;
@@ -56,10 +57,26 @@ public class CartItemServiceImpl implements CartItemService {
         return repository.findByUserId(userId);
     }
     
-//    @Override
-//    public ProductDTO fetchProductDetails(int productId) {
-//    	return productClient.getProductById(productId);
-//    }
+    @Override
+    public ProductDTO fetchProductDetails(int productId) {
+    	return productClient.getProductById(productId);
+    }
+
+    @Override
+    public CartItemWithProductDTO getCartItemWithProduct(int cartItemId) {
+        CartItem cartItem = repository.findById(cartItemId)
+            .orElseThrow(() -> new RuntimeException("CartItem not found"));
+
+        ProductDTO productDTO = productClient.getProductById(cartItem.getProductId());
+
+        CartItemWithProductDTO dto = new CartItemWithProductDTO();
+        dto.setCartItemId(cartItem.getCartItemId() );
+        dto.setProductId(cartItem.getProductId());
+        dto.setQuantity(cartItem.getQuantity());
+        dto.setProduct(productDTO);
+
+        return dto;
+    }
     
 
 }

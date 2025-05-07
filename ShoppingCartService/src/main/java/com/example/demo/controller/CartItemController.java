@@ -2,9 +2,11 @@ package com.example.demo.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-//import com.example.demo.dto.ProductDTO;
+import com.example.demo.dto.CartItemWithProductDTO;
+import com.example.demo.dto.ProductDTO;
 import com.example.demo.model.CartItem;
 import com.example.demo.service.CartItemService;
 
@@ -47,9 +49,14 @@ public class CartItemController {
         return service.getCartItemsByUserId(userId);
     }
     
-//    @GetMapping("/fetchProductDetails/{productId}")
-//    public ProductDTO fetchProductDetails(@PathVariable int productId) {
-//        return service.fetchProductDetails(productId);
-//    }
+    @GetMapping("/fetchProductDetails/{productId}")
+    public ProductDTO fetchProductDetails(@PathVariable("productId") int productId) {
+        return service.fetchProductDetails(productId);
+    }
+    
+    @GetMapping("/cartItem/withProduct/{id}")
+    public ResponseEntity<CartItemWithProductDTO> getCartItemWithProduct(@PathVariable("id") int id) {
+        return ResponseEntity.ok(service.getCartItemWithProduct(id));
+    }
     
 }
