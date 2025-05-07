@@ -4,11 +4,17 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+//import com.example.demo.dto.ProductDTO;
+//import com.example.demo.feign.ProductClient;
 import com.example.demo.model.CartItem;
 import com.example.demo.repository.CartItemRepository;
 
 @Service
 public class CartItemServiceImpl implements CartItemService {
+	
+//	@Autowired
+//	private ProductClient productClient;
 
     @Autowired
     CartItemRepository repository;
@@ -49,5 +55,11 @@ public class CartItemServiceImpl implements CartItemService {
     public List<CartItem> getCartItemsByUserId(int userId) {
         return repository.findByUserId(userId);
     }
+    
+//    @Override
+//    public ProductDTO fetchProductDetails(int productId) {
+//    	return productClient.getProductById(productId);
+//    }
+    
 
 }

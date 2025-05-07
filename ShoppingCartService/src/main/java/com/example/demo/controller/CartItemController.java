@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+//import com.example.demo.dto.ProductDTO;
 import com.example.demo.model.CartItem;
 import com.example.demo.service.CartItemService;
 
@@ -45,5 +46,10 @@ public class CartItemController {
     public List<CartItem> getByProductId(@PathVariable("userId") int userId) {
         return service.getCartItemsByUserId(userId);
     }
+    
+//    @GetMapping("/fetchProductDetails/{productId}")
+//    public ProductDTO fetchProductDetails(@PathVariable int productId) {
+//        return service.fetchProductDetails(productId);
+//    }
     
 }
