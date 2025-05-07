@@ -10,5 +10,5 @@ public interface CartItemService {
     public abstract CartItem getCartItemById(int cartItemId);
     public abstract List<CartItem> getAllCartItems();
     public abstract String deleteCartItemById(int cartItemId);
-    public abstract List<CartItem> getItemsByProductId(int productId);
+    public abstract List<CartItem> getCartItemsByUserId(int userId);
 }

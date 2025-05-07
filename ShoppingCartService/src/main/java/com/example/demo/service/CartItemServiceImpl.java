@@ -14,14 +14,14 @@ public class CartItemServiceImpl implements CartItemService {
     CartItemRepository repository;
 
     @Override
-    public String addCartItem(CartItem item) {
-        repository.save(item);
+    public String addCartItem(CartItem cartItem) {
+        repository.save(cartItem);
         return "Item added to cart successfully.";
     }
 
     @Override
-    public CartItem updateCartItem(CartItem item) {
-        return repository.save(item);
+    public CartItem updateCartItem(CartItem cartItem) {
+        return repository.save(cartItem);
     }
 
     @Override
@@ -46,7 +46,8 @@ public class CartItemServiceImpl implements CartItemService {
     }
 
     @Override
-    public List<CartItem> getItemsByProductId(int productId) {
-        return repository.findByProductId(productId);
+    public List<CartItem> getCartItemsByUserId(int userId) {
+        return repository.findByUserId(userId);
     }
+
 }

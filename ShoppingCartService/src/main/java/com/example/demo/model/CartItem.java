@@ -13,8 +13,10 @@ import lombok.*;
 public class CartItem {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cartItemId;
+    
+    private int userId;
 
     @NotNull(message = "ProductID is required")
     private int productId;

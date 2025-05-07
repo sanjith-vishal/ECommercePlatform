@@ -17,16 +17,16 @@ public class CartItemController {
     CartItemService service;
 
     @PostMapping("/add")
-    public String addToCart(@Valid @RequestBody CartItem item) {
-        return service.addCartItem(item);
+    public String addToCart(@Valid @RequestBody CartItem cartItem) {
+        return service.addCartItem(cartItem);
     }
 
     @PutMapping("/update")
-    public CartItem updateCart(@Valid @RequestBody CartItem item) {
-        return service.updateCartItem(item);
+    public CartItem updateCart(@Valid @RequestBody CartItem cartItem) {
+        return service.updateCartItem(cartItem);
     }
 
-    @GetMapping("/fetchById/{id}")
+    @GetMapping("/fetchByCartItemId/{id}")
     public CartItem getCartItem(@PathVariable("id") int id) {
         return service.getCartItemById(id);
     }
@@ -41,8 +41,9 @@ public class CartItemController {
         return service.deleteCartItemById(id);
     }
 
-    @GetMapping("/byProduct/{productId}")
-    public List<CartItem> getByProductId(@PathVariable int productId) {
-        return service.getItemsByProductId(productId);
+    @GetMapping("/fetchByUserId/{userId}")
+    public List<CartItem> getByProductId(@PathVariable("userId") int userId) {
+        return service.getCartItemsByUserId(userId);
     }
+    
 }
