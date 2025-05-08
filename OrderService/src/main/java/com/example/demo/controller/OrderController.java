@@ -2,8 +2,12 @@ package com.example.demo.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.dto.OrderResponseDTO;
+import com.example.demo.dto.OrderWithProductDTO;
+import com.example.demo.dto.OrderWithProductDetailsDTO;
 import com.example.demo.model.Order;
 import com.example.demo.service.OrderService;
 
@@ -26,11 +30,6 @@ public class OrderController {
         return service.updateOrder(order);
     }
 
-    @GetMapping("/fetchById/{id}")
-    public Order getOrder(@PathVariable("id") int id) {
-        return service.getOrderById(id);
-    }
-
     @GetMapping("/fetchAll")
     public List<Order> getAllOrders() {
         return service.getAllOrders();
@@ -40,9 +39,9 @@ public class OrderController {
     public String deleteOrder(@PathVariable("id") int id) {
         return service.deleteOrderById(id);
     }
-
+    
     @GetMapping("/byUser/{userId}")
-    public List<Order> getByUserId(@PathVariable int userId) {
+    public List<OrderWithProductDetailsDTO> getOrdersWithProductDetailsByUserId(@PathVariable int userId) {
         return service.getOrdersByUserId(userId);
     }
 
@@ -55,4 +54,15 @@ public class OrderController {
     public List<Order> getByPaymentStatus(@PathVariable String status) {
         return service.getOrdersByPaymentStatus(status);
     }
+    
+    @PostMapping("/placeOrderByUserId/{userId}")
+    public ResponseEntity<String> placeOrder(@PathVariable("userId") int userId, @RequestBody Order orderDetails) {
+        return ResponseEntity.ok(service.placeOrderByUserId(userId,orderDetails));
+    }
+    
+    @GetMapping("/orderWithProductDetails/{orderId}")
+    public ResponseEntity<OrderWithProductDTO> getOrderWithProductDetails(@PathVariable int orderId) {
+        return ResponseEntity.ok(service.getOrderWithProductDetails(orderId));
+    }
+
 }
