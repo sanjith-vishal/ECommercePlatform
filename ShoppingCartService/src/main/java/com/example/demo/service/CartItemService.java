@@ -16,4 +16,5 @@ public interface CartItemService {
     public abstract List<CartItem> getCartItemsByUserId(int userId);
 	public abstract ProductDTO fetchProductDetails(int productId);
 	public abstract CartItemWithProductDTO getCartItemWithProduct(int cartItemId); 
+	public abstract List<CartItemWithProductDTO> getCartItemsWithProductsByUserId(int userId);
 }

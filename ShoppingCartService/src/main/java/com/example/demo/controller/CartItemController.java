@@ -54,9 +54,13 @@ public class CartItemController {
         return service.fetchProductDetails(productId);
     }
     
-    @GetMapping("/cartItem/withProduct/{id}")
-    public ResponseEntity<CartItemWithProductDTO> getCartItemWithProduct(@PathVariable("id") int id) {
-        return ResponseEntity.ok(service.getCartItemWithProduct(id));
+    @GetMapping("/cartItem/withProduct/{cartItemId}")
+    public ResponseEntity<CartItemWithProductDTO> getCartItemWithProduct(@PathVariable("cartItemId") int cartItemid) {
+        return ResponseEntity.ok(service.getCartItemWithProduct(cartItemid));
     }
     
+    @GetMapping("/cartItems/withProducts/{userId}")
+    public ResponseEntity<List<CartItemWithProductDTO>> getCartItemsWithProducts(@PathVariable("userId") int userId) {
+        return ResponseEntity.ok(service.getCartItemsWithProductsByUserId(userId));
+    }
 }

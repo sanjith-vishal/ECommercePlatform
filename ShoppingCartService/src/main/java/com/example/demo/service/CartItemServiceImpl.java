@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -76,6 +78,23 @@ public class CartItemServiceImpl implements CartItemService {
         dto.setProduct(productDTO);
 
         return dto;
+    }
+
+    @Override
+    public List<CartItemWithProductDTO> getCartItemsWithProductsByUserId(int userId) {
+        List<CartItem> cartItems = repository.findByUserId(userId);
+
+        return cartItems.stream().map(item -> {
+            ProductDTO productDTO = productClient.getProductById(item.getProductId());
+
+            CartItemWithProductDTO dto = new CartItemWithProductDTO();
+            dto.setCartItemId(item.getCartItemId() );
+            dto.setProductId(item.getProductId());
+            dto.setQuantity(item.getQuantity());
+            dto.setProduct(productDTO);
+
+            return dto;
+        }).collect(Collectors.toList());
     }
     
 
