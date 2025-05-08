@@ -24,6 +24,9 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Override
     public String addCartItem(CartItem cartItem) {
+    	ProductDTO product = productClient.getProductById(cartItem.getProductId());
+    	double totalPrice = product.getPrice() * cartItem.getQuantity();
+    	cartItem.setTotalPrice(totalPrice);
         repository.save(cartItem);
         return "Item added to cart successfully.";
     }

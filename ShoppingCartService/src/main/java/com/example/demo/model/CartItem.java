@@ -24,6 +24,6 @@ public class CartItem {
     @Min(value = 1, message = "Quantity must be at least 1")
     private int quantity;
 
-    @Min(value = 0, message = "Total price must be 0 or more")
+    //@Min(value = 0, message = "Total price must be 0 or more")
     private double totalPrice;
 }
