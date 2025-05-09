@@ -41,4 +41,44 @@ public class AdminController {
     public String deleteAdmin(@PathVariable int id) {
         return service.deleteAdminById(id);
     }
+    
+    @GetMapping("/users")
+    public Object getAllUsers() {
+        return service.fetchAllUsers();
+    }
+
+    @GetMapping("/products")
+    public Object getAllProducts() {
+        return service.fetchAllProducts();
+    }
+
+    @GetMapping("/orders")
+    public Object getAllOrders() {
+        return service.fetchAllOrders();
+    }
+
+    @GetMapping("/carts")
+    public Object getAllCarts() {
+        return service.fetchAllCartItems();
+    }
+
+    @DeleteMapping("/deleteUser/{id}")
+    public String deleteUser(@PathVariable int id) {
+        return service.deleteUser(id);
+    }
+
+    @DeleteMapping("/deleteProduct/{id}")
+    public String deleteProduct(@PathVariable int id) {
+        return service.deleteProduct(id);
+    }
+
+    @DeleteMapping("/deleteOrder/{id}")
+    public String deleteOrder(@PathVariable int id) {
+        return service.deleteOrder(id);
+    }
+
+    @DeleteMapping("/deleteCart/{id}")
+    public String deleteCartItem(@PathVariable int id) {
+        return service.deleteCartItem(id);
+    }
 }
