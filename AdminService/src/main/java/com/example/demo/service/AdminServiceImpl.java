@@ -3,7 +3,6 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.CartItemDTO;
@@ -17,22 +16,20 @@ import com.example.demo.feign.UserClient;
 import com.example.demo.model.Admin;
 import com.example.demo.repository.AdminRepository;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class AdminServiceImpl implements AdminService {
 
-	@Autowired 
 	private UserClient userClient;
 	
-    @Autowired 
     private ProductClient productClient;
     
-    @Autowired 
     private OrderClient orderClient;
     
-    @Autowired 
     private ShoppingCartClient cartClient;
 	
-    @Autowired
     AdminRepository repository;
 
     @Override
