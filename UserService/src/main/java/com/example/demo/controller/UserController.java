@@ -27,8 +27,8 @@ public class UserController {
         return service.updateUser(user);
     }
 
-    @GetMapping("/fetchById/{id}")
-    public User getUser(@PathVariable("id") int userId) {
+    @GetMapping("/fetchById/{userId}")
+    public User getUser(@PathVariable int userId) {
         return service.getUserById(userId);
     }
 
