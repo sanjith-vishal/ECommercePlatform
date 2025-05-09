@@ -15,4 +15,5 @@ public class OrderWithProductDetailsDTO {
     private int productId;
     private int quantity;
     private ProductDTO product;
+    private UserDTO user;
 }

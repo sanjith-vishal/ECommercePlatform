@@ -14,8 +14,10 @@ import com.example.demo.dto.OrderWithProductDTO;
 import com.example.demo.dto.OrderWithProductDetailsDTO;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.dto.ProductWithQuantityDTO;
+import com.example.demo.dto.UserDTO;
 import com.example.demo.feign.ProductClient;
 import com.example.demo.feign.ShoppingCartClient;
+import com.example.demo.feign.UserClient;
 import com.example.demo.model.Order;
 import com.example.demo.repository.OrderRepository;
 
@@ -30,6 +32,9 @@ public class OrderServiceImpl implements OrderService {
     
     @Autowired
     private ProductClient productClient;
+    
+    @Autowired
+    private UserClient userClient;
     
 
     @Override
@@ -130,6 +135,9 @@ public class OrderServiceImpl implements OrderService {
         List<Order> orders = repository.findByUserId(userId);
         List<CartItemDTO> cartItems = cartClient.getCartItemsByUserId(userId);
 
+        UserDTO user = userClient.getUser(userId);
+        
+        
         List<OrderWithProductDetailsDTO> result = new ArrayList<>();
 
         for (Order order : orders) {
@@ -147,6 +155,7 @@ public class OrderServiceImpl implements OrderService {
                     dto.setProductId(cartItem.getProductId());
                     dto.setQuantity(cartItem.getQuantity());
                     dto.setProduct(product);
+                    dto.setUser(user);
 
                     result.add(dto);
                 }
