@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -8,8 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.CartItemWithProductDTO;
+import com.example.demo.dto.CartItemWithUserDTO;
 import com.example.demo.dto.ProductDTO;
+import com.example.demo.dto.UserDTO;
 import com.example.demo.feign.ProductClient;
+import com.example.demo.feign.UserClient;
 import com.example.demo.model.CartItem;
 import com.example.demo.repository.CartItemRepository;
 
@@ -21,6 +25,9 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Autowired
     CartItemRepository repository;
+    
+    @Autowired
+    private UserClient userClient;
 
     @Override
     public String addCartItem(CartItem cartItem) {
@@ -100,5 +107,25 @@ public class CartItemServiceImpl implements CartItemService {
         }).collect(Collectors.toList());
     }
     
+    @Override
+    public List<CartItemWithUserDTO> getCartItemsWithUser(int userId) {
+        List<CartItem> cartItems = repository.findByUserId(userId);
+        UserDTO user = userClient.getUserById(userId);
+
+        List<CartItemWithUserDTO> result = new ArrayList<>();
+        for (CartItem item : cartItems) {
+            CartItemWithUserDTO dto = new CartItemWithUserDTO();
+            dto.setCartItemId(item.getCartItemId());
+            dto.setUserId(item.getUserId());
+            dto.setProductId(item.getProductId());
+            dto.setQuantity(item.getQuantity());
+            dto.setTotalPrice(item.getTotalPrice());
+            dto.setUser(user);
+
+            result.add(dto);
+        }
+
+        return result;
+    }
 
 }

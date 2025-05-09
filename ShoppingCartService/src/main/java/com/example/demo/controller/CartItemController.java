@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.dto.CartItemWithProductDTO;
+import com.example.demo.dto.CartItemWithUserDTO;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.model.CartItem;
 import com.example.demo.service.CartItemService;
@@ -62,5 +63,10 @@ public class CartItemController {
     @GetMapping("/cartItems/withProducts/{userId}")
     public ResponseEntity<List<CartItemWithProductDTO>> getCartItemsWithProducts(@PathVariable("userId") int userId) {
         return ResponseEntity.ok(service.getCartItemsWithProductsByUserId(userId));
+    }
+    
+    @GetMapping("/cartItemsWithUser/{userId}")
+    public List<CartItemWithUserDTO> getCartItemsWithUser(@PathVariable("userId") int userId) {
+        return service.getCartItemsWithUser(userId);
     }
 }
