@@ -14,31 +14,31 @@ import jakarta.validation.Valid;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    UserService service;
+	@Autowired
+	UserService service;
 
-    @PostMapping("/save")
-    public String saveUser(@Valid @RequestBody User user) {
-        return service.saveUser(user);
-    }
+	@PostMapping("/save")
+	public String saveUser(@Valid @RequestBody User user) {
+		return service.saveUser(user);
+	}
 
-    @PutMapping("/update")
-    public User updateUser(@Valid @RequestBody User user) {
-        return service.updateUser(user);
-    }
+	@PutMapping("/update")
+	public User updateUser(@Valid @RequestBody User user) {
+		return service.updateUser(user);
+	}
 
-    @GetMapping("/fetchById/{userId}")
-    public User getUser(@PathVariable int userId) {
-        return service.getUserById(userId);
-    }
+	@GetMapping("/fetchById/{userId}")
+	public User getUser(@PathVariable int userId) {
+		return service.getUserById(userId);
+	}
 
-    @GetMapping("/fetchAll")
-    public List<User> getAllUsers() {
-        return service.getAllUsers();
-    }
+	@GetMapping("/fetchAll")
+	public List<User> getAllUsers() {
+		return service.getAllUsers();
+	}
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteUser(@PathVariable("id") int userId) {
-        return service.deleteUserById(userId);
-    }
+	@DeleteMapping("/delete/{id}")
+	public String deleteUser(@PathVariable("id") int userId) {
+		return service.deleteUserById(userId);
+	}
 }
