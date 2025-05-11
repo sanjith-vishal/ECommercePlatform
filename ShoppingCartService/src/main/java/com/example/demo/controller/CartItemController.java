@@ -18,55 +18,55 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CartItemController {
 
-    CartItemService service;
+	CartItemService service;
 
-    @PostMapping("/add")
-    public String addToCart(@Valid @RequestBody CartItem cartItem) {
-        return service.addCartItem(cartItem);
-    }
+	@PostMapping("/add")
+	public String addToCart(@Valid @RequestBody CartItem cartItem) {
+		return service.addCartItem(cartItem);
+	}
 
-    @PutMapping("/update")
-    public CartItem updateCart(@Valid @RequestBody CartItem cartItem) {
-        return service.updateCartItem(cartItem);
-    }
+	@PutMapping("/update")
+	public CartItem updateCart(@Valid @RequestBody CartItem cartItem) {
+		return service.updateCartItem(cartItem);
+	}
 
-    @GetMapping("/fetchByCartItemId/{id}")
-    public CartItem getCartItem(@PathVariable("id") int id) {
-        return service.getCartItemById(id);
-    }
+	@GetMapping("/fetchByCartItemId/{id}")
+	public CartItem getCartItem(@PathVariable("id") int id) {
+		return service.getCartItemById(id);
+	}
 
-    @GetMapping("/fetchAll")
-    public List<CartItem> getAllCartItems() {
-        return service.getAllCartItems();
-    }
+	@GetMapping("/fetchAll")
+	public List<CartItem> getAllCartItems() {
+		return service.getAllCartItems();
+	}
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteCartItem(@PathVariable("id") int id) {
-        return service.deleteCartItemById(id);
-    }
+	@DeleteMapping("/delete/{id}")
+	public String deleteCartItem(@PathVariable("id") int id) {
+		return service.deleteCartItemById(id);
+	}
 
-    @GetMapping("/fetchByUserId/{userId}")
-    public List<CartItem> getByProductId(@PathVariable("userId") int userId) {
-        return service.getCartItemsByUserId(userId);
-    }
-    
-    @GetMapping("/fetchProductDetails/{productId}")
-    public ProductDTO fetchProductDetails(@PathVariable("productId") int productId) {
-        return service.fetchProductDetails(productId);
-    }
-    
-    @GetMapping("/cartItem/withProduct/{cartItemId}")
-    public ResponseEntity<CartItemWithProductDTO> getCartItemWithProduct(@PathVariable("cartItemId") int cartItemid) {
-        return ResponseEntity.ok(service.getCartItemWithProduct(cartItemid));
-    }
-    
-    @GetMapping("/cartItems/withProducts/{userId}")
-    public ResponseEntity<List<CartItemWithProductDTO>> getCartItemsWithProducts(@PathVariable("userId") int userId) {
-        return ResponseEntity.ok(service.getCartItemsWithProductsByUserId(userId));
-    }
-    
-    @GetMapping("/cartItemsWithUser/{userId}")
-    public List<CartItemWithUserDTO> getCartItemsWithUser(@PathVariable("userId") int userId) {
-        return service.getCartItemsWithUser(userId);
-    }
+	@GetMapping("/fetchByUserId/{userId}")
+	public List<CartItem> getByProductId(@PathVariable("userId") int userId) {
+		return service.getCartItemsByUserId(userId);
+	}
+
+	@GetMapping("/fetchProductDetails/{productId}")
+	public ProductDTO fetchProductDetails(@PathVariable("productId") int productId) {
+		return service.fetchProductDetails(productId);
+	}
+
+	@GetMapping("/cartItem/withProduct/{cartItemId}")
+	public ResponseEntity<CartItemWithProductDTO> getCartItemWithProduct(@PathVariable("cartItemId") int cartItemid) {
+		return ResponseEntity.ok(service.getCartItemWithProduct(cartItemid));
+	}
+
+	@GetMapping("/cartItems/withProducts/{userId}")
+	public ResponseEntity<List<CartItemWithProductDTO>> getCartItemsWithProducts(@PathVariable("userId") int userId) {
+		return ResponseEntity.ok(service.getCartItemsWithProductsByUserId(userId));
+	}
+
+	@GetMapping("/cartItemsWithUser/{userId}")
+	public List<CartItemWithUserDTO> getCartItemsWithUser(@PathVariable("userId") int userId) {
+		return service.getCartItemsWithUser(userId);
+	}
 }

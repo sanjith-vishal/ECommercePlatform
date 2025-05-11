@@ -12,18 +12,18 @@ import lombok.*;
 @AllArgsConstructor
 public class CartItem {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cartItemId;
-    
-    private int userId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int cartItemId;
 
-    @NotNull(message = "ProductID is required")
-    private int productId;
+	private int userId;
 
-    @Min(value = 1, message = "Quantity must be at least 1")
-    private int quantity;
+	@NotNull(message = "ProductID is required")
+	private int productId;
 
-    //@Min(value = 0, message = "Total price must be 0 or more")
-    private double totalPrice;
+	@Min(value = 1, message = "Quantity must be at least 1")
+	private int quantity;
+
+	// @Min(value = 0, message = "Total price must be 0 or more")
+	private double totalPrice;
 }
