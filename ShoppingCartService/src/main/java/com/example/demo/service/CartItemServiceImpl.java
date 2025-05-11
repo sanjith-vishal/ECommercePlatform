@@ -14,6 +14,7 @@ import com.example.demo.dto.CartItemWithProductDTO;
 import com.example.demo.dto.CartItemWithUserDTO;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.exceptions.CartItemNotFoundException;
 import com.example.demo.feign.ProductClient;
 import com.example.demo.feign.UserClient;
 import com.example.demo.model.CartItem;
@@ -53,8 +54,8 @@ public class CartItemServiceImpl implements CartItemService {
     @Override
     public CartItem getCartItemById(int cartItemId) {
         log.info("Fetching cart item with ID: {}", cartItemId);
-        Optional<CartItem> optional = repository.findById(cartItemId);
-        return optional.orElse(null);
+        return repository.findById(cartItemId)
+                .orElseThrow(() -> new CartItemNotFoundException("Cart item not found with ID: " + cartItemId));
     }
 
     @Override
@@ -68,14 +69,14 @@ public class CartItemServiceImpl implements CartItemService {
     @Override
     public String deleteCartItemById(int cartItemId) {
         log.info("Attempting to delete cart item with ID: {}", cartItemId);
-        if (repository.existsById(cartItemId)) {
-            repository.deleteById(cartItemId);
-            log.info("Cart item deleted: {}", cartItemId);
-            return "Cart item deleted.";
-        } else {
-            log.warn("Cart item not found for ID: {}", cartItemId);
-            return "Cart item not found.";
+        if (!repository.existsById(cartItemId)) {
+        	log.warn("Cart item not found for ID: {}", cartItemId);
+            throw new CartItemNotFoundException("Cannot delete. Cart item not found with ID: " + cartItemId);
         }
+        repository.deleteById(cartItemId);
+        log.info("Cart item deleted: {}", cartItemId);
+        return "Cart item deleted.";
+        
     }
 
     @Override
