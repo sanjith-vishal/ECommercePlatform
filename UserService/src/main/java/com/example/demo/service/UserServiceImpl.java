@@ -9,7 +9,7 @@ import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 
 import java.util.List;
-import java.util.Optional;
+import com.example.demo.exceptions.UserNotFoundException;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -43,14 +43,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(int userId) {
         log.info("In UserServiceImpl getUserById method....");
-        Optional<User> optional = repository.findById(userId);
-        if (optional.isPresent()) {
-            log.info("User found with ID: {}", userId);
-            return optional.get();
-        } else {
-            log.warn("User with ID {} not found", userId);
-            return null;
-        }
+        return repository.findById(userId).orElseThrow(() ->
+            new UserNotFoundException("User with ID " + userId + " not found"));
     }
 
     @Override
@@ -64,13 +58,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public String deleteUserById(int userId) {
         log.info("In UserServiceImpl deleteUserById method....");
-        if (repository.existsById(userId)) {
-            repository.deleteById(userId);
-            log.info("User with ID {} deleted successfully", userId);
-            return "User Deleted Successfully!";
-        } else {
+        if (!repository.existsById(userId)) {
             log.warn("User with ID {} not found", userId);
-            return "User Not Found.";
+            throw new UserNotFoundException("User with ID " + userId + " not found");
         }
+        repository.deleteById(userId);
+        log.info("User with ID {} deleted successfully", userId);
+        return "User Deleted Successfully!";
     }
 }
