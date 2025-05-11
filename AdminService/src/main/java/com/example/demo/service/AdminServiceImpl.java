@@ -8,6 +8,7 @@ import com.example.demo.dto.CartItemDTO;
 import com.example.demo.dto.OrderDTO;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.exceptions.AdminNotFoundException;
 import com.example.demo.feign.OrderClient;
 import com.example.demo.feign.ProductClient;
 import com.example.demo.feign.ShoppingCartClient;
@@ -57,14 +58,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public Admin getAdminById(int id) {
 		log.info("Fetching admin by ID: {}", id);
-		Optional<Admin> optional = repository.findById(id);
-		if (optional.isPresent()) {
-			log.info("Admin found with ID: {}", id);
-			return optional.get();
-		} else {
-			log.warn("Admin not found with ID: {}", id);
-			return null;
-		}
+		return repository.findById(id).orElseThrow(() -> new AdminNotFoundException("Admin not found with ID: " + id));
 	}
 
 	@Override
@@ -78,14 +72,13 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public String deleteAdminById(int id) {
 		log.info("Deleting admin with ID: {}", id);
-		if (repository.existsById(id)) {
-			repository.deleteById(id);
-			log.info("Admin deleted with ID: {}", id);
-			return "Admin deleted successfully.";
-		} else {
+		if (!repository.existsById(id)) {
 			log.warn("Admin not found with ID: {}", id);
-			return "Admin not found.";
+			throw new AdminNotFoundException("Admin not found with ID: " + id);
 		}
+		repository.deleteById(id);
+		log.info("Admin deleted with ID: {}", id);
+		return "Admin deleted successfully.";
 	}
 
 	@Override

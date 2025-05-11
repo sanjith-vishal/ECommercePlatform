@@ -333,3 +333,170 @@ feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://PRODUCTSE
 2025-05-12T01:23:20.778+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2025-05-12T01:23:20.796+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - deregister  status: 200
 2025-05-12T01:23:20.796+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-05-12T04:31:04.961+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : Starting AdminServiceApplication using Java 21.0.6 with PID 4724 (C:\Users\2400597\git\ECommercePlatform\AdminService\target\classes started by 2400597 in C:\Users\2400597\git\ECommercePlatform\AdminService)
+2025-05-12T04:31:04.964+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-12T04:31:05.079+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-05-12T04:31:05.079+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=AdminService, profiles=[default], label=null, version=042e04925b98dab6baaad2e6c3af92a7f809ca67, state=
+2025-05-12T04:31:05.085+05:30  INFO 4724 --- [AdminService] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-12T04:31:05.085+05:30  INFO 4724 --- [AdminService] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-12T04:31:07.107+05:30  INFO 4724 --- [AdminService] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12T04:31:07.334+05:30  INFO 4724 --- [AdminService] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 210 ms. Found 1 JPA repository interface.
+2025-05-12T04:31:07.711+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8a5aac92-834c-3e4a-aefd-cf1847908f28
+2025-05-12T04:31:08.924+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2025-05-12T04:31:08.949+05:30  INFO 4724 --- [AdminService] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-12T04:31:08.949+05:30  INFO 4724 --- [AdminService] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-12T04:31:09.092+05:30  INFO 4724 --- [AdminService] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-12T04:31:09.093+05:30  INFO 4724 --- [AdminService] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4005 ms
+2025-05-12T04:31:09.810+05:30  INFO 4724 --- [AdminService] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12T04:31:09.887+05:30  INFO 4724 --- [AdminService] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-12T04:31:09.937+05:30  INFO 4724 --- [AdminService] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-12T04:31:10.286+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12T04:31:10.329+05:30  INFO 4724 --- [AdminService] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-12T04:31:10.753+05:30  INFO 4724 --- [AdminService] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65ad9a54
+2025-05-12T04:31:10.756+05:30  INFO 4724 --- [AdminService] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-12T04:31:10.830+05:30  WARN 4724 --- [AdminService] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12T04:31:10.855+05:30  INFO 4724 --- [AdminService] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-12T04:31:11.972+05:30  INFO 4724 --- [AdminService] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12T04:31:12.035+05:30  INFO 4724 --- [AdminService] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T04:31:12.179+05:30  WARN 4724 --- [AdminService] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12T04:31:12.295+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-12T04:31:12.358+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'USERSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:31:12.470+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'PRODUCTSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:31:12.502+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'ORDERSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:31:12.529+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'SHOPPINGCARTSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:31:13.858+05:30  INFO 4724 --- [AdminService] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-05-12T04:31:13.911+05:30  WARN 4724 --- [AdminService] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-12T04:31:13.938+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-12T04:31:14.054+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-05-12T04:31:14.083+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-05-12T04:31:14.087+05:30  INFO 4724 --- [AdminService] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T04:31:14.098+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-05-12T04:31:14.099+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-05-12T04:31:14.099+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-05-12T04:31:14.099+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-05-12T04:31:14.100+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-05-12T04:31:14.100+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-05-12T04:31:14.101+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-05-12T04:31:14.443+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-05-12T04:31:14.448+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-05-12T04:31:14.451+05:30  INFO 4724 --- [AdminService] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-05-12T04:31:14.455+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1747004474455 with initial instances count: 0
+2025-05-12T04:31:14.470+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ADMINSERVICE with eureka with status UP
+2025-05-12T04:31:14.471+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1747004474471, current=UP, previous=STARTING]
+2025-05-12T04:31:14.475+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085: registering service...
+2025-05-12T04:31:14.508+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2025-05-12T04:31:14.510+05:30  INFO 4724 --- [AdminService] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2025-05-12T04:31:14.538+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : Started AdminServiceApplication in 12.508 seconds (process running for 14.635)
+2025-05-12T04:31:14.556+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - registration status: 204
+2025-05-12T04:31:15.161+05:30  INFO 4724 --- [AdminService] [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12T04:31:15.162+05:30  INFO 4724 --- [AdminService] [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-12T04:31:15.164+05:30  INFO 4724 --- [AdminService] [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-12T04:31:18.367+05:30  INFO 4724 --- [AdminService] [http-nio-8085-exec-6] c.example.demo.service.AdminServiceImpl  : Fetching admin by ID: 111
+2025-05-12T04:31:18.473+05:30  WARN 4724 --- [AdminService] [http-nio-8085-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.demo.exceptions.AdminNotFoundException: Admin not found with ID: 111]
+2025-05-12T04:31:44.450+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-05-12T04:31:44.453+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-05-12T04:31:44.454+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-05-12T04:31:44.454+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-05-12T04:31:44.454+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-05-12T04:31:44.455+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-05-12T04:31:44.455+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-05-12T04:31:44.487+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-05-12T04:32:20.198+05:30  INFO 4724 --- [AdminService] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-05-12T04:32:20.202+05:30  INFO 4724 --- [AdminService] [Thread-5] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ADMINSERVICE with eureka with status DOWN
+2025-05-12T04:32:20.203+05:30  INFO 4724 --- [AdminService] [Thread-5] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1747004540203, current=DOWN, previous=UP]
+2025-05-12T04:32:20.203+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085: registering service...
+2025-05-12T04:32:20.209+05:30  INFO 4724 --- [AdminService] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-12T04:32:20.214+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - registration status: 204
+2025-05-12T04:32:20.224+05:30  INFO 4724 --- [AdminService] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-12T04:32:20.242+05:30  INFO 4724 --- [AdminService] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T04:32:20.249+05:30  INFO 4724 --- [AdminService] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-12T04:32:20.270+05:30  INFO 4724 --- [AdminService] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-12T04:32:20.273+05:30  INFO 4724 --- [AdminService] [Thread-5] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-05-12T04:32:23.287+05:30  INFO 4724 --- [AdminService] [Thread-5] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-05-12T04:32:23.305+05:30  INFO 4724 --- [AdminService] [Thread-5] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - deregister  status: 200
+2025-05-12T04:32:23.306+05:30  INFO 4724 --- [AdminService] [Thread-5] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-05-12T04:32:24.692+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : Starting AdminServiceApplication using Java 21.0.6 with PID 4724 (C:\Users\2400597\git\ECommercePlatform\AdminService\target\classes started by 2400597 in C:\Users\2400597\git\ECommercePlatform\AdminService)
+2025-05-12T04:32:24.693+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-12T04:32:24.698+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-05-12T04:32:24.699+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=AdminService, profiles=[default], label=null, version=042e04925b98dab6baaad2e6c3af92a7f809ca67, state=
+2025-05-12T04:32:25.777+05:30  INFO 4724 --- [AdminService] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12T04:32:25.803+05:30  INFO 4724 --- [AdminService] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 1 JPA repository interface.
+2025-05-12T04:32:26.056+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8a5aac92-834c-3e4a-aefd-cf1847908f28
+2025-05-12T04:32:26.453+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8085 (http)
+2025-05-12T04:32:26.456+05:30  INFO 4724 --- [AdminService] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-12T04:32:26.456+05:30  INFO 4724 --- [AdminService] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-12T04:32:26.584+05:30  INFO 4724 --- [AdminService] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-12T04:32:26.584+05:30  INFO 4724 --- [AdminService] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1884 ms
+2025-05-12T04:32:27.021+05:30  INFO 4724 --- [AdminService] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12T04:32:27.028+05:30  INFO 4724 --- [AdminService] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-12T04:32:27.062+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12T04:32:27.066+05:30  INFO 4724 --- [AdminService] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-05-12T04:32:27.102+05:30  INFO 4724 --- [AdminService] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31c7d105
+2025-05-12T04:32:27.104+05:30  INFO 4724 --- [AdminService] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-05-12T04:32:27.108+05:30  WARN 4724 --- [AdminService] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12T04:32:27.109+05:30  INFO 4724 --- [AdminService] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-12T04:32:27.222+05:30  INFO 4724 --- [AdminService] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12T04:32:27.241+05:30  INFO 4724 --- [AdminService] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T04:32:27.369+05:30  WARN 4724 --- [AdminService] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12T04:32:27.537+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-12T04:32:27.599+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'USERSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:32:27.698+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'PRODUCTSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:32:27.741+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'ORDERSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:32:27.783+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'SHOPPINGCARTSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:32:29.218+05:30  INFO 4724 --- [AdminService] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-05-12T04:32:29.303+05:30  WARN 4724 --- [AdminService] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-12T04:32:29.333+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-12T04:32:29.468+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-05-12T04:32:29.474+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-05-12T04:32:29.474+05:30  INFO 4724 --- [AdminService] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T04:32:29.475+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-05-12T04:32:29.475+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-05-12T04:32:29.475+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-05-12T04:32:29.475+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-05-12T04:32:29.476+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-05-12T04:32:29.476+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-05-12T04:32:29.476+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-05-12T04:32:29.572+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-05-12T04:32:29.576+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-05-12T04:32:29.577+05:30  INFO 4724 --- [AdminService] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-05-12T04:32:29.578+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1747004549578 with initial instances count: 0
+2025-05-12T04:32:29.602+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ADMINSERVICE with eureka with status UP
+2025-05-12T04:32:29.603+05:30  INFO 4724 --- [AdminService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1747004549603, current=UP, previous=STARTING]
+2025-05-12T04:32:29.611+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085: registering service...
+2025-05-12T04:32:29.625+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8085 (http) with context path '/'
+2025-05-12T04:32:29.628+05:30  INFO 4724 --- [AdminService] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8085
+2025-05-12T04:32:29.660+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - registration status: 204
+2025-05-12T04:32:29.688+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : Started AdminServiceApplication in 6.27 seconds (process running for 89.785)
+2025-05-12T04:32:29.695+05:30  INFO 4724 --- [AdminService] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-12T04:32:30.638+05:30  INFO 4724 --- [AdminService] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-05-12T04:32:30.644+05:30  INFO 4724 --- [AdminService] [Thread-9] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ADMINSERVICE with eureka with status DOWN
+2025-05-12T04:32:30.644+05:30  INFO 4724 --- [AdminService] [Thread-9] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1747004550644, current=DOWN, previous=UP]
+2025-05-12T04:32:30.645+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085: registering service...
+2025-05-12T04:32:30.649+05:30  INFO 4724 --- [AdminService] [Thread-9] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-12T04:32:30.653+05:30  INFO 4724 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - registration status: 204
+2025-05-12T04:32:30.661+05:30  INFO 4724 --- [AdminService] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-12T04:32:30.671+05:30  INFO 4724 --- [AdminService] [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T04:32:30.672+05:30  INFO 4724 --- [AdminService] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-05-12T04:32:30.698+05:30  INFO 4724 --- [AdminService] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-05-12T04:32:30.699+05:30  INFO 4724 --- [AdminService] [Thread-9] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-05-12T04:32:33.702+05:30  INFO 4724 --- [AdminService] [Thread-9] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-05-12T04:32:33.722+05:30  INFO 4724 --- [AdminService] [Thread-9] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - deregister  status: 200
+2025-05-12T04:32:33.722+05:30  INFO 4724 --- [AdminService] [Thread-9] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-05-12T04:32:34.776+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : Starting AdminServiceApplication using Java 21.0.6 with PID 4724 (C:\Users\2400597\git\ECommercePlatform\AdminService\target\classes started by 2400597 in C:\Users\2400597\git\ECommercePlatform\AdminService)
+2025-05-12T04:32:34.777+05:30  INFO 4724 --- [AdminService] [restartedMain] c.example.demo.AdminServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-12T04:32:34.780+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-05-12T04:32:34.781+05:30  INFO 4724 --- [AdminService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=AdminService, profiles=[default], label=null, version=042e04925b98dab6baaad2e6c3af92a7f809ca67, state=
