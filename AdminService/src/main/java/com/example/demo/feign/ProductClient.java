@@ -8,9 +8,9 @@ import java.util.List;
 
 @FeignClient(name = "PRODUCTSERVICE")
 public interface ProductClient {
-    @GetMapping("/product/fetchAll")
-    List<ProductDTO> getAllProducts();
+	@GetMapping("/product/fetchAll")
+	List<ProductDTO> getAllProducts();
 
-    @DeleteMapping("/product/delete/{id}")
-    String deleteProduct(@PathVariable int id);
+	@DeleteMapping("/product/delete/{id}")
+	String deleteProduct(@PathVariable int id);
 }

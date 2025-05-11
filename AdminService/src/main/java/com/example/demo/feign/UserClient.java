@@ -8,9 +8,9 @@ import java.util.List;
 
 @FeignClient(name = "USERSERVICE")
 public interface UserClient {
-    @GetMapping("/user/fetchAll")
-    List<UserDTO> getAllUsers();
+	@GetMapping("/user/fetchAll")
+	List<UserDTO> getAllUsers();
 
-    @DeleteMapping("/user/delete/{id}")
-    String deleteUser(@PathVariable int id);
+	@DeleteMapping("/user/delete/{id}")
+	String deleteUser(@PathVariable int id);
 }

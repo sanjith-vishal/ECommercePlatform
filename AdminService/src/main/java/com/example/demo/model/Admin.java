@@ -11,16 +11,16 @@ import lombok.*;
 @AllArgsConstructor
 public class Admin {
 
-    @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int adminId;
+	@Id
+	// @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int adminId;
 
-    @NotBlank(message = "Name is required")
-    private String name;
+	@NotBlank(message = "Name is required")
+	private String name;
 
-    @NotBlank(message = "Role is required")
-    private String role;
+	@NotBlank(message = "Role is required")
+	private String role;
 
-    @NotBlank(message = "Permissions are required")
-    private String permissions;
+	@NotBlank(message = "Permissions are required")
+	private String permissions;
 }

@@ -15,71 +15,70 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AdminController {
 
-    
-    AdminService service;
+	AdminService service;
 
-    @PostMapping("/save")
-    public String saveAdmin(@Valid @RequestBody Admin admin) {
-        return service.saveAdmin(admin);
-    }
+	@PostMapping("/save")
+	public String saveAdmin(@Valid @RequestBody Admin admin) {
+		return service.saveAdmin(admin);
+	}
 
-    @PutMapping("/update")
-    public Admin updateAdmin(@Valid @RequestBody Admin admin) {
-        return service.updateAdmin(admin);
-    }
+	@PutMapping("/update")
+	public Admin updateAdmin(@Valid @RequestBody Admin admin) {
+		return service.updateAdmin(admin);
+	}
 
-    @GetMapping("/fetchById/{id}")
-    public Admin getAdminById(@PathVariable int id) {
-        return service.getAdminById(id);
-    }
+	@GetMapping("/fetchById/{id}")
+	public Admin getAdminById(@PathVariable int id) {
+		return service.getAdminById(id);
+	}
 
-    @GetMapping("/fetchAll")
-    public List<Admin> getAllAdmins() {
-        return service.getAllAdmins();
-    }
+	@GetMapping("/fetchAll")
+	public List<Admin> getAllAdmins() {
+		return service.getAllAdmins();
+	}
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteAdmin(@PathVariable int id) {
-        return service.deleteAdminById(id);
-    }
-    
-    @GetMapping("/users")
-    public Object getAllUsers() {
-        return service.fetchAllUsers();
-    }
+	@DeleteMapping("/delete/{id}")
+	public String deleteAdmin(@PathVariable int id) {
+		return service.deleteAdminById(id);
+	}
 
-    @GetMapping("/products")
-    public Object getAllProducts() {
-        return service.fetchAllProducts();
-    }
+	@GetMapping("/users")
+	public Object getAllUsers() {
+		return service.fetchAllUsers();
+	}
 
-    @GetMapping("/orders")
-    public Object getAllOrders() {
-        return service.fetchAllOrders();
-    }
+	@GetMapping("/products")
+	public Object getAllProducts() {
+		return service.fetchAllProducts();
+	}
 
-    @GetMapping("/carts")
-    public Object getAllCarts() {
-        return service.fetchAllCartItems();
-    }
+	@GetMapping("/orders")
+	public Object getAllOrders() {
+		return service.fetchAllOrders();
+	}
 
-    @DeleteMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable int id) {
-        return service.deleteUser(id);
-    }
+	@GetMapping("/carts")
+	public Object getAllCarts() {
+		return service.fetchAllCartItems();
+	}
 
-    @DeleteMapping("/deleteProduct/{id}")
-    public String deleteProduct(@PathVariable int id) {
-        return service.deleteProduct(id);
-    }
+	@DeleteMapping("/deleteUser/{id}")
+	public String deleteUser(@PathVariable int id) {
+		return service.deleteUser(id);
+	}
 
-    @DeleteMapping("/deleteOrder/{id}")
-    public String deleteOrder(@PathVariable int id) {
-        return service.deleteOrder(id);
-    }
+	@DeleteMapping("/deleteProduct/{id}")
+	public String deleteProduct(@PathVariable int id) {
+		return service.deleteProduct(id);
+	}
 
-    @DeleteMapping("/deleteCart/{id}")
-    public String deleteCartItem(@PathVariable int id) {
-        return service.deleteCartItem(id);
-    }
+	@DeleteMapping("/deleteOrder/{id}")
+	public String deleteOrder(@PathVariable int id) {
+		return service.deleteOrder(id);
+	}
+
+	@DeleteMapping("/deleteCart/{id}")
+	public String deleteCartItem(@PathVariable int id) {
+		return service.deleteCartItem(id);
+	}
 }
