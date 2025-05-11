@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exceptions.ProductNotFound;
 import com.example.demo.model.Product;
 import com.example.demo.repository.ProductRepository;
 
@@ -48,7 +49,7 @@ public class ProductServiceImpl implements ProductService {
             return optional.get();
         } else {
             log.warn("Product not found: {}", productId);
-            return null;
+            throw new ProductNotFound("Product with ID " + productId + " not found");
         }
     }
 
