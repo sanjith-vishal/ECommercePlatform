@@ -255,3 +255,84 @@ feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://SHOPPINGC
 2025-05-12T01:28:44.246+05:30  INFO 16976 --- [OrderService] [RMI TCP Connection(74)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
 2025-05-12T01:28:44.251+05:30  INFO 16976 --- [OrderService] [RMI TCP Connection(74)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERSERVICE/LTIN600818.cts.com:OrderService:8084 - deregister  status: 200
 2025-05-12T01:28:44.252+05:30  INFO 16976 --- [OrderService] [RMI TCP Connection(74)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-05-12T04:06:41.395+05:30  INFO 21860 --- [OrderService] [restartedMain] c.example.demo.OrderServiceApplication   : Starting OrderServiceApplication using Java 21.0.6 with PID 21860 (C:\Users\2400597\git\ECommercePlatform\OrderService\target\classes started by 2400597 in C:\Users\2400597\git\ECommercePlatform\OrderService)
+2025-05-12T04:06:41.402+05:30  INFO 21860 --- [OrderService] [restartedMain] c.example.demo.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-12T04:06:41.508+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-05-12T04:06:41.508+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=OrderService, profiles=[default], label=null, version=042e04925b98dab6baaad2e6c3af92a7f809ca67, state=
+2025-05-12T04:06:41.512+05:30  INFO 21860 --- [OrderService] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-12T04:06:41.514+05:30  INFO 21860 --- [OrderService] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-12T04:06:43.510+05:30  INFO 21860 --- [OrderService] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12T04:06:43.808+05:30  INFO 21860 --- [OrderService] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 276 ms. Found 1 JPA repository interface.
+2025-05-12T04:06:44.300+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b0d6b689-6709-3b14-b979-f5f6415c042d
+2025-05-12T04:06:45.815+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-05-12T04:06:45.844+05:30  INFO 21860 --- [OrderService] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-12T04:06:45.846+05:30  INFO 21860 --- [OrderService] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-12T04:06:45.947+05:30  INFO 21860 --- [OrderService] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-12T04:06:45.947+05:30  INFO 21860 --- [OrderService] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4431 ms
+2025-05-12T04:06:46.511+05:30  INFO 21860 --- [OrderService] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12T04:06:46.577+05:30  INFO 21860 --- [OrderService] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-12T04:06:46.620+05:30  INFO 21860 --- [OrderService] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-12T04:06:46.950+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12T04:06:46.996+05:30  INFO 21860 --- [OrderService] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-12T04:06:47.501+05:30  INFO 21860 --- [OrderService] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5071b185
+2025-05-12T04:06:47.504+05:30  INFO 21860 --- [OrderService] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-12T04:06:47.582+05:30  WARN 21860 --- [OrderService] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12T04:06:47.607+05:30  INFO 21860 --- [OrderService] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-12T04:06:48.784+05:30  INFO 21860 --- [OrderService] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12T04:06:48.848+05:30  INFO 21860 --- [OrderService] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T04:06:48.984+05:30  WARN 21860 --- [OrderService] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12T04:06:49.090+05:30  WARN 21860 --- [OrderService] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-05-12T04:06:49.186+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'SHOPPINGCARTSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:06:49.633+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'PRODUCTSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:06:49.666+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'USERSERVICE' URL not provided. Will try picking an instance via load-balancing.
+2025-05-12T04:06:50.814+05:30  INFO 21860 --- [OrderService] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-05-12T04:06:50.858+05:30  WARN 21860 --- [OrderService] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-05-12T04:06:50.879+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-05-12T04:06:50.977+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-05-12T04:06:51.005+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-05-12T04:06:51.009+05:30  INFO 21860 --- [OrderService] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T04:06:51.019+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-05-12T04:06:51.020+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-05-12T04:06:51.020+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-05-12T04:06:51.020+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-05-12T04:06:51.020+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-05-12T04:06:51.020+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-05-12T04:06:51.021+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-05-12T04:06:51.323+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-05-12T04:06:51.325+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-05-12T04:06:51.327+05:30  INFO 21860 --- [OrderService] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-05-12T04:06:51.329+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1747003011329 with initial instances count: 1
+2025-05-12T04:06:51.335+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDERSERVICE with eureka with status UP
+2025-05-12T04:06:51.336+05:30  INFO 21860 --- [OrderService] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1747003011336, current=UP, previous=STARTING]
+2025-05-12T04:06:51.339+05:30  INFO 21860 --- [OrderService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERSERVICE/LTIN600818.cts.com:OrderService:8084: registering service...
+2025-05-12T04:06:51.366+05:30  INFO 21860 --- [OrderService] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-05-12T04:06:51.367+05:30  INFO 21860 --- [OrderService] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8084
+2025-05-12T04:06:51.386+05:30  INFO 21860 --- [OrderService] [restartedMain] c.example.demo.OrderServiceApplication   : Started OrderServiceApplication in 12.394 seconds (process running for 13.643)
+2025-05-12T04:06:51.399+05:30  INFO 21860 --- [OrderService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERSERVICE/LTIN600818.cts.com:OrderService:8084 - registration status: 204
+2025-05-12T04:06:51.940+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(9)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12T04:06:51.941+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-12T04:06:51.942+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-12T04:07:17.286+05:30  INFO 21860 --- [OrderService] [http-nio-8084-exec-6] c.example.demo.service.OrderServiceImpl  : Attempting to delete order with ID: 99
+2025-05-12T04:07:17.964+05:30  WARN 21860 --- [OrderService] [http-nio-8084-exec-6] c.example.demo.service.OrderServiceImpl  : Order not found with ID: 99
+2025-05-12T04:07:17.999+05:30  WARN 21860 --- [OrderService] [http-nio-8084-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.demo.exceptions.OrderNotFoundException: Order not found with ID: 99]
+2025-05-12T04:07:33.921+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-12T04:07:33.922+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDERSERVICE with eureka with status DOWN
+2025-05-12T04:07:33.922+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1747003053922, current=DOWN, previous=UP]
+2025-05-12T04:07:33.925+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-12T04:07:33.922+05:30  INFO 21860 --- [OrderService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERSERVICE/LTIN600818.cts.com:OrderService:8084: registering service...
+2025-05-12T04:07:33.928+05:30  INFO 21860 --- [OrderService] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-12T04:07:33.939+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T04:07:33.942+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-12T04:07:33.944+05:30  INFO 21860 --- [OrderService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERSERVICE/LTIN600818.cts.com:OrderService:8084 - registration status: 204
+2025-05-12T04:07:33.954+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-12T04:07:33.954+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-05-12T04:07:36.956+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-05-12T04:07:36.970+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERSERVICE/LTIN600818.cts.com:OrderService:8084 - deregister  status: 200
+2025-05-12T04:07:36.970+05:30  INFO 21860 --- [OrderService] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

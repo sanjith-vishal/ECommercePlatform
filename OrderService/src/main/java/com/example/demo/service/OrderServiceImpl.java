@@ -13,6 +13,7 @@ import com.example.demo.dto.OrderWithProductDetailsDTO;
 import com.example.demo.dto.ProductDTO;
 import com.example.demo.dto.ProductWithQuantityDTO;
 import com.example.demo.dto.UserDTO;
+import com.example.demo.exceptions.OrderNotFoundException;
 import com.example.demo.feign.ProductClient;
 import com.example.demo.feign.ShoppingCartClient;
 import com.example.demo.feign.UserClient;
@@ -73,7 +74,7 @@ public class OrderServiceImpl implements OrderService {
             return "Order deleted.";
         } else {
             log.warn("Order not found with ID: {}", orderId);
-            return "Order not found.";
+            throw new OrderNotFoundException("Order not found with ID: " + orderId);
         }
     }
     
@@ -124,10 +125,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderWithProductDTO getOrderWithProductDetails(int orderId) {
         log.info("Fetching order with product details for Order ID: {}", orderId);
         Order order = repository.findById(orderId)
-            .orElseThrow(() -> {
-                log.error("Order not found with ID: {}", orderId);
-                return new RuntimeException("Order not found");
-            });
+            .orElseThrow(() -> new OrderNotFoundException("Order not found with ID: " + orderId));
 
         List<CartItemWithProductDTO> cartItems = cartClient.getCartItemsWithProducts(order.getUserId());
         List<ProductWithQuantityDTO> products = new ArrayList<>();
@@ -157,6 +155,9 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderWithProductDetailsDTO> getOrdersByUserId(int userId) {
         log.info("Fetching orders with product details for user ID: {}", userId);
         List<Order> orders = repository.findByUserId(userId);
+        if (orders.isEmpty()) {
+            throw new OrderNotFoundException("No orders found for user ID: " + userId);
+        }
         List<CartItemDTO> cartItems = cartClient.getCartItemsByUserId(userId);
 
         UserDTO user = userClient.getUser(userId);
