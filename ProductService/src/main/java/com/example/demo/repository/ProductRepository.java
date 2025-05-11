@@ -7,5 +7,6 @@ import com.example.demo.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 	List<Product> findByCategory(String category);
-    List<Product> findByPriceBetween(double min, double max);
+
+	List<Product> findByPriceBetween(double min, double max);
 }
