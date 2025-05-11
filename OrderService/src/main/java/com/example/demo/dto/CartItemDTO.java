@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartItemDTO {
-    private int cartItemId;
-    private int productId;
-    private int userId;
-    private int quantity;
-    private double totalPrice;
+	private int cartItemId;
+	private int productId;
+	private int userId;
+	private int quantity;
+	private double totalPrice;
 }

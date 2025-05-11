@@ -7,6 +7,6 @@ import java.util.List;
 
 @Data
 public class OrderWithProductDTO {
-    private Order order;
-    private List<ProductWithQuantityDTO> products;
+	private Order order;
+	private List<ProductWithQuantityDTO> products;
 }

@@ -13,15 +13,15 @@ import java.util.List;
 
 @Data
 public class OrderResponseDTO {
-    private int orderId;
-    private int userId;
-    private double totalPrice;
-    private String shippingAddress; 
-    private String orderStatus;
-    private String paymentStatus;
-    private int productId;
-    private int quantity;
+	private int orderId;
+	private int userId;
+	private double totalPrice;
+	private String shippingAddress;
+	private String orderStatus;
+	private String paymentStatus;
+	private int productId;
+	private int quantity;
 
-    private ProductDTO product;
-    private UserDTO user;
+	private ProductDTO product;
+	private UserDTO user;
 }

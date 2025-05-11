@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class ProductWithQuantityDTO {
-    private int productId;
-    private String name;
-    private String description;
-    private double price;
-    private int Orderedquantity;
+	private int productId;
+	private String name;
+	private String description;
+	private double price;
+	private int Orderedquantity;
 }

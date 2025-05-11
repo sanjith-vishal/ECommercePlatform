@@ -26,166 +26,164 @@ import java.util.Optional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    
-    Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
-    @Autowired
-    private ShoppingCartClient cartClient;
+	Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
-    @Autowired
-    private OrderRepository repository;
-    
-    @Autowired
-    private ProductClient productClient;
-    
-    @Autowired
-    private UserClient userClient;
+	@Autowired
+	private ShoppingCartClient cartClient;
 
-    @Override
-    public String placeOrder(Order order) {
-        log.info("In OrderServiceImpl placeOrder method....");
-        repository.save(order);
-        log.info("Order placed successfully with ID: {}", order.getOrderId());
-        return "Order placed successfully.";
-    }
+	@Autowired
+	private OrderRepository repository;
 
-    @Override
-    public Order updateOrder(Order order) {
-        log.info("In OrderServiceImpl updateOrder method....");
-        Order updatedOrder = repository.save(order);
-        log.info("Order updated with ID: {}", updatedOrder.getOrderId());
-        return updatedOrder;
-    }
+	@Autowired
+	private ProductClient productClient;
 
-    @Override
-    public List<Order> getAllOrders() {
-        log.info("Fetching all orders...");
-        List<Order> orders = repository.findAll();
-        log.info("Total orders fetched: {}", orders.size());
-        return orders;
-    }
+	@Autowired
+	private UserClient userClient;
 
-    @Override
-    public String deleteOrderById(int orderId) {
-        log.info("Attempting to delete order with ID: {}", orderId);
-        if (repository.existsById(orderId)) {
-            repository.deleteById(orderId);
-            log.info("Order deleted with ID: {}", orderId);
-            return "Order deleted.";
-        } else {
-            log.warn("Order not found with ID: {}", orderId);
-            throw new OrderNotFoundException("Order not found with ID: " + orderId);
-        }
-    }
-    
-    @Override
-    public List<Order> getOrdersByOrderStatus(String status) {
-        log.info("Fetching orders with status: {}", status);
-        List<Order> orders = repository.findByOrderStatus(status);
-        log.info("Total orders fetched with status {}: {}", status, orders.size());
-        return orders;
-    }
+	@Override
+	public String placeOrder(Order order) {
+		log.info("In OrderServiceImpl placeOrder method....");
+		repository.save(order);
+		log.info("Order placed successfully with ID: {}", order.getOrderId());
+		return "Order placed successfully.";
+	}
 
-    @Override
-    public List<Order> getOrdersByPaymentStatus(String status) {
-        log.info("Fetching orders with payment status: {}", status);
-        List<Order> orders = repository.findByPaymentStatus(status);
-        log.info("Total orders fetched with payment status {}: {}", status, orders.size());
-        return orders;
-    }
+	@Override
+	public Order updateOrder(Order order) {
+		log.info("In OrderServiceImpl updateOrder method....");
+		Order updatedOrder = repository.save(order);
+		log.info("Order updated with ID: {}", updatedOrder.getOrderId());
+		return updatedOrder;
+	}
 
-    @Override
-    public String placeOrderByUserId(int userId, Order orderDetails) {
-        log.info("Placing order for user with ID: {}", userId);
-        List<CartItemDTO> cartItems = cartClient.getCartItemsByUserId(userId);
+	@Override
+	public List<Order> getAllOrders() {
+		log.info("Fetching all orders...");
+		List<Order> orders = repository.findAll();
+		log.info("Total orders fetched: {}", orders.size());
+		return orders;
+	}
 
-        if (cartItems.isEmpty()) {
-            log.warn("Cart is empty for user ID: {}", userId);
-            return "Cart is empty. Cannot place order.";
-        }
+	@Override
+	public String deleteOrderById(int orderId) {
+		log.info("Attempting to delete order with ID: {}", orderId);
+		if (repository.existsById(orderId)) {
+			repository.deleteById(orderId);
+			log.info("Order deleted with ID: {}", orderId);
+			return "Order deleted.";
+		} else {
+			log.warn("Order not found with ID: {}", orderId);
+			throw new OrderNotFoundException("Order not found with ID: " + orderId);
+		}
+	}
 
-        double totalOrderPrice = cartItems.stream()
-                .mapToDouble(CartItemDTO::getTotalPrice)
-                .sum();
+	@Override
+	public List<Order> getOrdersByOrderStatus(String status) {
+		log.info("Fetching orders with status: {}", status);
+		List<Order> orders = repository.findByOrderStatus(status);
+		log.info("Total orders fetched with status {}: {}", status, orders.size());
+		return orders;
+	}
 
-        Order newOrder = new Order();
-        newOrder.setUserId(userId);
-        newOrder.setTotalPrice(totalOrderPrice);
-        newOrder.setShippingAddress(orderDetails.getShippingAddress());
-        newOrder.setOrderStatus(orderDetails.getOrderStatus());
-        newOrder.setPaymentStatus(orderDetails.getPaymentStatus());
+	@Override
+	public List<Order> getOrdersByPaymentStatus(String status) {
+		log.info("Fetching orders with payment status: {}", status);
+		List<Order> orders = repository.findByPaymentStatus(status);
+		log.info("Total orders fetched with payment status {}: {}", status, orders.size());
+		return orders;
+	}
 
-        repository.save(newOrder);
-        log.info("Order placed successfully for user ID: {}. Order ID: {}", userId, newOrder.getOrderId());
-        
-        return "Order placed successfully. Order ID: " + newOrder.getOrderId();
-    }
+	@Override
+	public String placeOrderByUserId(int userId, Order orderDetails) {
+		log.info("Placing order for user with ID: {}", userId);
+		List<CartItemDTO> cartItems = cartClient.getCartItemsByUserId(userId);
 
-    @Override
-    public OrderWithProductDTO getOrderWithProductDetails(int orderId) {
-        log.info("Fetching order with product details for Order ID: {}", orderId);
-        Order order = repository.findById(orderId)
-            .orElseThrow(() -> new OrderNotFoundException("Order not found with ID: " + orderId));
+		if (cartItems.isEmpty()) {
+			log.warn("Cart is empty for user ID: {}", userId);
+			return "Cart is empty. Cannot place order.";
+		}
 
-        List<CartItemWithProductDTO> cartItems = cartClient.getCartItemsWithProducts(order.getUserId());
-        List<ProductWithQuantityDTO> products = new ArrayList<>();
+		double totalOrderPrice = cartItems.stream().mapToDouble(CartItemDTO::getTotalPrice).sum();
 
-        for (CartItemWithProductDTO item : cartItems) {
-            ProductDTO product = item.getProduct();
-            ProductWithQuantityDTO dto = new ProductWithQuantityDTO();
+		Order newOrder = new Order();
+		newOrder.setUserId(userId);
+		newOrder.setTotalPrice(totalOrderPrice);
+		newOrder.setShippingAddress(orderDetails.getShippingAddress());
+		newOrder.setOrderStatus(orderDetails.getOrderStatus());
+		newOrder.setPaymentStatus(orderDetails.getPaymentStatus());
 
-            dto.setProductId(product.getProductId());
-            dto.setName(product.getProductName());
-            dto.setDescription(product.getDescription());
-            dto.setPrice(product.getPrice());
-            dto.setOrderedquantity(item.getQuantity());
+		repository.save(newOrder);
+		log.info("Order placed successfully for user ID: {}. Order ID: {}", userId, newOrder.getOrderId());
 
-            products.add(dto);
-        }
+		return "Order placed successfully. Order ID: " + newOrder.getOrderId();
+	}
 
-        OrderWithProductDTO response = new OrderWithProductDTO();
-        response.setOrder(order);
-        response.setProducts(products);
+	@Override
+	public OrderWithProductDTO getOrderWithProductDetails(int orderId) {
+		log.info("Fetching order with product details for Order ID: {}", orderId);
+		Order order = repository.findById(orderId)
+				.orElseThrow(() -> new OrderNotFoundException("Order not found with ID: " + orderId));
 
-        log.info("Fetched order with product details for Order ID: {}", orderId);
-        return response;
-    }
+		List<CartItemWithProductDTO> cartItems = cartClient.getCartItemsWithProducts(order.getUserId());
+		List<ProductWithQuantityDTO> products = new ArrayList<>();
 
-    @Override
-    public List<OrderWithProductDetailsDTO> getOrdersByUserId(int userId) {
-        log.info("Fetching orders with product details for user ID: {}", userId);
-        List<Order> orders = repository.findByUserId(userId);
-        if (orders.isEmpty()) {
-            throw new OrderNotFoundException("No orders found for user ID: " + userId);
-        }
-        List<CartItemDTO> cartItems = cartClient.getCartItemsByUserId(userId);
+		for (CartItemWithProductDTO item : cartItems) {
+			ProductDTO product = item.getProduct();
+			ProductWithQuantityDTO dto = new ProductWithQuantityDTO();
 
-        UserDTO user = userClient.getUser(userId);
-        List<OrderWithProductDetailsDTO> result = new ArrayList<>();
+			dto.setProductId(product.getProductId());
+			dto.setName(product.getProductName());
+			dto.setDescription(product.getDescription());
+			dto.setPrice(product.getPrice());
+			dto.setOrderedquantity(item.getQuantity());
 
-        for (Order order : orders) {
-            for (CartItemDTO cartItem : cartItems) {
-                if (cartItem.getUserId() == userId) {
-                    ProductDTO product = productClient.getProductById(cartItem.getProductId());
+			products.add(dto);
+		}
 
-                    OrderWithProductDetailsDTO dto = new OrderWithProductDetailsDTO();
-                    dto.setOrderId(order.getOrderId());
-                    dto.setUserId(order.getUserId());
-                    dto.setTotalPrice(order.getTotalPrice());
-                    dto.setShippingAddress(order.getShippingAddress());
-                    dto.setOrderStatus(order.getOrderStatus());
-                    dto.setPaymentStatus(order.getPaymentStatus());
-                    dto.setProductId(cartItem.getProductId());
-                    dto.setQuantity(cartItem.getQuantity());
-                    dto.setProduct(product);
-                    dto.setUser(user);
+		OrderWithProductDTO response = new OrderWithProductDTO();
+		response.setOrder(order);
+		response.setProducts(products);
 
-                    result.add(dto);
-                }
-            }
-        }
+		log.info("Fetched order with product details for Order ID: {}", orderId);
+		return response;
+	}
 
-        log.info("Fetched orders with product details for user ID: {}", userId);
-        return result;
-    }
+	@Override
+	public List<OrderWithProductDetailsDTO> getOrdersByUserId(int userId) {
+		log.info("Fetching orders with product details for user ID: {}", userId);
+		List<Order> orders = repository.findByUserId(userId);
+		if (orders.isEmpty()) {
+			throw new OrderNotFoundException("No orders found for user ID: " + userId);
+		}
+		List<CartItemDTO> cartItems = cartClient.getCartItemsByUserId(userId);
+
+		UserDTO user = userClient.getUser(userId);
+		List<OrderWithProductDetailsDTO> result = new ArrayList<>();
+
+		for (Order order : orders) {
+			for (CartItemDTO cartItem : cartItems) {
+				if (cartItem.getUserId() == userId) {
+					ProductDTO product = productClient.getProductById(cartItem.getProductId());
+
+					OrderWithProductDetailsDTO dto = new OrderWithProductDetailsDTO();
+					dto.setOrderId(order.getOrderId());
+					dto.setUserId(order.getUserId());
+					dto.setTotalPrice(order.getTotalPrice());
+					dto.setShippingAddress(order.getShippingAddress());
+					dto.setOrderStatus(order.getOrderStatus());
+					dto.setPaymentStatus(order.getPaymentStatus());
+					dto.setProductId(cartItem.getProductId());
+					dto.setQuantity(cartItem.getQuantity());
+					dto.setProduct(product);
+					dto.setUser(user);
+
+					result.add(dto);
+				}
+			}
+		}
+
+		log.info("Fetched orders with product details for user ID: {}", userId);
+		return result;
+	}
 }

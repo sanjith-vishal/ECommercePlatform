@@ -13,22 +13,22 @@ import lombok.*;
 @AllArgsConstructor
 public class Order {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int orderId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int orderId;
 
-    @NotNull(message = "UserID is required")
-    private int userId;
+	@NotNull(message = "UserID is required")
+	private int userId;
 
-    @Min(value = 0, message = "Total price must be 0 or more")
-    private double totalPrice;
+	@Min(value = 0, message = "Total price must be 0 or more")
+	private double totalPrice;
 
-    @NotBlank(message = "Shipping address is required")
-    private String shippingAddress;
+	@NotBlank(message = "Shipping address is required")
+	private String shippingAddress;
 
-    @NotBlank(message = "Order status is required")
-    private String orderStatus;
+	@NotBlank(message = "Order status is required")
+	private String orderStatus;
 
-    @NotBlank(message = "Payment status is required")
-    private String paymentStatus;
+	@NotBlank(message = "Payment status is required")
+	private String paymentStatus;
 }
