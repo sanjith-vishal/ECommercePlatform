@@ -319,3 +319,17 @@ feign.FeignException$ServiceUnavailable: [503] during [GET] to [http://PRODUCTSE
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar:10.1.40]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
+2025-05-12T01:23:17.751+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-12T01:23:17.752+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ADMINSERVICE with eureka with status DOWN
+2025-05-12T01:23:17.752+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1746993197752, current=DOWN, previous=UP]
+2025-05-12T01:23:17.752+05:30  INFO 19376 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085: registering service...
+2025-05-12T01:23:17.753+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-12T01:23:17.761+05:30  INFO 19376 --- [AdminService] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-12T01:23:17.767+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T01:23:17.768+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-05-12T01:23:17.772+05:30  INFO 19376 --- [AdminService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - registration status: 204
+2025-05-12T01:23:17.774+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-05-12T01:23:17.775+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-05-12T01:23:20.778+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-05-12T01:23:20.796+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ADMINSERVICE/LTIN600818.cts.com:AdminService:8085 - deregister  status: 200
+2025-05-12T01:23:20.796+05:30  INFO 19376 --- [AdminService] [RMI TCP Connection(49)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
