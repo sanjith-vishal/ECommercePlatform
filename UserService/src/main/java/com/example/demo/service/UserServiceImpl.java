@@ -8,15 +8,17 @@ import org.springframework.stereotype.Service;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 import com.example.demo.exceptions.UserNotFoundException;
 
 @Service
+@NoArgsConstructor
 public class UserServiceImpl implements UserService {
 
 	Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
-	@Autowired
 	private UserRepository repository;
 
 	@Override
