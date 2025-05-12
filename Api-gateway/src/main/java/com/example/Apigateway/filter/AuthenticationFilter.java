@@ -60,9 +60,10 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
 
     private boolean isAuthorized(String role, String path, String method) {
         if ("ADMIN".equalsIgnoreCase(role)) {
-            return path.startsWith("/employee") || path.startsWith("/department");
+            return path.startsWith("/admin") || path.startsWith("/order") || path.startsWith("/product") || path.startsWith("/user") || path.startsWith("/cart");
         } else if ("USER".equalsIgnoreCase(role)) {
-            return (path.startsWith("/employee") || path.startsWith("/department")) && method.equalsIgnoreCase("GET");
+            //return (path.startsWith("/employee") || path.startsWith("/department")) && method.equalsIgnoreCase("GET");
+            return ( (path.startsWith("/product") && method.equalsIgnoreCase("GET") ) || ( (path.startsWith("/user") && ( method.equalsIgnoreCase("GET") || method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT"))) ) || ( (path.startsWith("/cart") && ( method.equalsIgnoreCase("GET") || method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("DELETE") || method.equalsIgnoreCase("PUT"))) ) || ( (path.startsWith("/order") && ( method.equalsIgnoreCase("GET") || method.equalsIgnoreCase("POST"))) ) );
         }
         return false;
     }
