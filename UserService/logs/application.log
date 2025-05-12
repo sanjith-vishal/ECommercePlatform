@@ -762,3 +762,28 @@ Unconditional classes:
 2025-05-12T10:10:23.434+05:30  INFO 27052 --- [UserService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERSERVICE/LTIN600818.cts.com:UserService:8082 - registration status: 204
 2025-05-12T10:10:23.452+05:30  INFO 27052 --- [UserService] [restartedMain] c.example.demo.UserServiceApplication    : Started UserServiceApplication in 3.383 seconds (process running for 2809.532)
 2025-05-12T10:10:23.456+05:30  INFO 27052 --- [UserService] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-12T10:15:23.600+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:20:23.613+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:25:23.622+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:30:23.628+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:35:23.643+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:40:23.650+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:45:23.650+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:50:23.665+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T10:55:23.672+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T11:00:23.677+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T11:05:23.692+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T11:24:01.513+05:30  WARN 27052 --- [UserService] [HikariPool-6 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=16m37s903ms83µs700ns).
+2025-05-12T11:26:31.606+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T11:31:31.609+05:30  INFO 27052 --- [UserService] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-05-12T11:34:49.631+05:30  INFO 27052 --- [UserService] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-05-12T11:34:49.632+05:30  INFO 27052 --- [UserService] [Thread-31] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USERSERVICE with eureka with status DOWN
+2025-05-12T11:34:49.633+05:30  INFO 27052 --- [UserService] [Thread-31] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1747029889633, current=DOWN, previous=UP]
+2025-05-12T11:34:49.633+05:30  INFO 27052 --- [UserService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERSERVICE/LTIN600818.cts.com:UserService:8082: registering service...
+2025-05-12T11:34:49.634+05:30  INFO 27052 --- [UserService] [Thread-31] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-12T11:34:49.637+05:30  INFO 27052 --- [UserService] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-12T11:34:49.644+05:30  INFO 27052 --- [UserService] [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12T11:34:49.645+05:30  INFO 27052 --- [UserService] [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-05-12T11:34:49.654+05:30  INFO 27052 --- [UserService] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERSERVICE/LTIN600818.cts.com:UserService:8082 - registration status: 204
+2025-05-12T11:34:49.655+05:30  INFO 27052 --- [UserService] [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2025-05-12T11:34:49.656+05:30  INFO 27052 --- [UserService] [Thread-31] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
