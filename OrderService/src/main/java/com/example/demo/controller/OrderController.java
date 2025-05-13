@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.dto.OrderResponseDTO;
 import com.example.demo.dto.OrderWithProductDTO;
 import com.example.demo.dto.OrderWithProductDetailsDTO;
 import com.example.demo.model.Order;
 import com.example.demo.service.OrderService;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/order")

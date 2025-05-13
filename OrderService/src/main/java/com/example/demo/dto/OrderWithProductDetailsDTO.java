@@ -1,6 +1,5 @@
 package com.example.demo.dto;
 
-import com.example.demo.dto.ProductDTO;
 import lombok.Data;
 
 @Data

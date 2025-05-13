@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.CartItemDTO;
 import com.example.demo.dto.CartItemWithProductDTO;
-import com.example.demo.dto.OrderResponseDTO;
 import com.example.demo.dto.OrderWithProductDTO;
 import com.example.demo.dto.OrderWithProductDetailsDTO;
 import com.example.demo.dto.ProductDTO;
@@ -22,7 +21,6 @@ import com.example.demo.repository.OrderRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class OrderServiceImpl implements OrderService {

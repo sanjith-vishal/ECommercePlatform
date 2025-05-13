@@ -1,17 +1,12 @@
 package com.example.demo.dto;
 
-import com.example.demo.model.Order;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.List;
-
-//@Data
-//public class OrderResponseDTO {
-//    private Order order;
-//    private List<CartItemWithProductDTO> cartItemsWithProducts;
-//}
 
 @Data
+@AllArgsConstructor
 public class OrderResponseDTO {
 	private int orderId;
 	private int userId;

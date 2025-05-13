@@ -8,5 +8,5 @@ public class ProductWithQuantityDTO {
 	private String name;
 	private String description;
 	private double price;
-	private int Orderedquantity;
+	private int orderedquantity;
 }
