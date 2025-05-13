@@ -20,6 +20,9 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductRepository repository;
 
+	// Saves a product to the repository.
+	// Logs the attempt and result of saving the product.
+	// Returns a success or failure message based on the save operation.
 	@Override
 	public String saveProduct(Product product) {
 		log.info("Attempting to save product: {}", product.getProductName());
@@ -32,6 +35,9 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 
+	// Updates an existing product in the repository.
+	// Logs the product ID being updated.
+	// Returns the updated product.
 	@Override
 	public Product updateProduct(Product product) {
 		log.info("Updating product with ID: {}", product.getProductId());
@@ -40,6 +46,9 @@ public class ProductServiceImpl implements ProductService {
 		return updated;
 	}
 
+	// Retrieves a product by its ID from the repository.
+	// Logs the attempt to fetch the product.
+	// Throws an exception if the product is not found.
 	@Override
 	public Product getProduct(int productId) {
 		log.info("Fetching product with ID: {}", productId);
@@ -53,6 +62,8 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 
+	// Retrieves all products from the repository.
+	// Logs the attempt and number of products retrieved.
 	@Override
 	public List<Product> getAllProducts() {
 		log.info("Fetching all products...");
@@ -61,6 +72,9 @@ public class ProductServiceImpl implements ProductService {
 		return products;
 	}
 
+	// Deletes a product by its ID if it exists in the repository.
+	// Logs the attempt and result of the deletion.
+	// Returns a success or failure message based on the deletion operation.
 	@Override
 	public String deleteProduct(int productId) {
 		log.info("Attempting to delete product with ID: {}", productId);
@@ -75,6 +89,8 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 
+	// Retrieves a list of products filtered by category.
+	// Logs the attempt and number of products retrieved.
 	@Override
 	public List<Product> getProductsByCategory(String category) {
 		log.info("Fetching products by category: {}", category);
@@ -83,6 +99,8 @@ public class ProductServiceImpl implements ProductService {
 		return products;
 	}
 
+	// Retrieves a list of products filtered by price range.
+	// Logs the attempt and number of products retrieved.
 	@Override
 	public List<Product> getProductsByPriceRange(double minPrice, double maxPrice) {
 		log.info("Fetching products in price range: {} - {}", minPrice, maxPrice);

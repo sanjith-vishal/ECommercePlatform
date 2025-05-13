@@ -38,6 +38,8 @@ public class AdminServiceImpl implements AdminService {
 		this.repository = repository;
 	}
 
+	// Saves an admin entity to the repository.
+    // Logs the operation and returns a success message.
 	@Override
 	public String saveAdmin(Admin admin) {
 		log.info("In AdminServiceImpl saveAdmin method....");
@@ -46,6 +48,8 @@ public class AdminServiceImpl implements AdminService {
 		return "Admin saved successfully.";
 	}
 
+	// Updates an existing admin entity in the repository.
+    // Logs the update attempt and returns the updated admin object.
 	@Override
 	public Admin updateAdmin(Admin admin) {
 		log.info("In AdminServiceImpl updateAdmin method....");
@@ -54,12 +58,17 @@ public class AdminServiceImpl implements AdminService {
 		return updatedAdmin;
 	}
 
+	// Retrieves an admin by its ID from the repository.
+    // Logs the retrieval attempt.
+    // Throws an exception if the admin is not found.
 	@Override
 	public Admin getAdminById(int id) {
 		log.info("Fetching admin by ID: {}", id);
 		return repository.findById(id).orElseThrow(() -> new AdminNotFoundException("Admin not found with ID: " + id));
 	}
 
+	// Retrieves all admin entities from the repository.
+    // Logs the total number of admins fetched.
 	@Override
 	public List<Admin> getAllAdmins() {
 		log.info("Fetching all admins...");
@@ -68,6 +77,8 @@ public class AdminServiceImpl implements AdminService {
 		return admins;
 	}
 
+	// Deletes an admin entity by its ID if it exists in the repository.
+    // Logs the deletion attempt and throws an exception if the admin is not found.
 	@Override
 	public String deleteAdminById(int id) {
 		log.info("Deleting admin with ID: {}", id);
@@ -80,6 +91,8 @@ public class AdminServiceImpl implements AdminService {
 		return "Admin deleted successfully.";
 	}
 
+	// Retrieves all users from the user service via a Feign client.
+    // Logs the total number of users fetched.
 	@Override
 	public List<UserDTO> fetchAllUsers() {
 		log.info("Fetching all users...");
@@ -88,6 +101,8 @@ public class AdminServiceImpl implements AdminService {
 		return users;
 	}
 
+	// Retrieves all products from the product service via a Feign client.
+    // Logs the total number of products fetched.
 	@Override
 	public List<ProductDTO> fetchAllProducts() {
 		log.info("Fetching all products...");
@@ -96,6 +111,8 @@ public class AdminServiceImpl implements AdminService {
 		return products;
 	}
 
+	// Retrieves all orders from the order service via a Feign client.
+    // Logs the total number of orders fetched.
 	@Override
 	public List<OrderDTO> fetchAllOrders() {
 		log.info("Fetching all orders...");
@@ -104,6 +121,8 @@ public class AdminServiceImpl implements AdminService {
 		return orders;
 	}
 
+	// Retrieves all cart items from the cart service via a Feign client.
+    // Logs the total number of cart items fetched.
 	@Override
 	public List<CartItemDTO> fetchAllCartItems() {
 		log.info("Fetching all cart items...");
@@ -112,6 +131,8 @@ public class AdminServiceImpl implements AdminService {
 		return cartItems;
 	}
 
+	// Deletes a user entity via the user service.
+    // Logs the response from the user service.
 	@Override
 	public String deleteUser(int id) {
 		log.info("Deleting user with ID: {}", id);
@@ -120,6 +141,8 @@ public class AdminServiceImpl implements AdminService {
 		return response;
 	}
 
+	// Deletes a product entity via the product service.
+    // Logs the response from the product service.
 	@Override
 	public String deleteProduct(int id) {
 		log.info("Deleting product with ID: {}", id);
@@ -128,6 +151,8 @@ public class AdminServiceImpl implements AdminService {
 		return response;
 	}
 
+	// Deletes an order entity via the order service.
+    // Logs the response from the order service.
 	@Override
 	public String deleteOrder(int id) {
 		log.info("Deleting order with ID: {}", id);
@@ -136,6 +161,8 @@ public class AdminServiceImpl implements AdminService {
 		return response;
 	}
 
+	// Deletes a cart item via the cart service.
+    // Logs the response from the cart service.
 	@Override
 	public String deleteCartItem(int id) {
 		log.info("Deleting cart item with ID: {}", id);

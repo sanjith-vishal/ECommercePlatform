@@ -33,6 +33,9 @@ public class CartItemServiceImpl implements CartItemService {
 	@Autowired
 	private UserClient userClient;
 
+	// Adds a new cart item to the repository.
+	// Fetches product details to calculate the total price.
+	// Logs the operation and saves the cart item.
 	@Override
 	public String addCartItem(CartItem cartItem) {
 		log.info("Adding cart item for productId={} and userId={}", cartItem.getProductId(), cartItem.getUserId());
@@ -44,12 +47,17 @@ public class CartItemServiceImpl implements CartItemService {
 		return "Item added to cart successfully.";
 	}
 
+	// Updates an existing cart item in the repository.
+	// Logs the update attempt.
+	// Returns the updated cart item.
 	@Override
 	public CartItem updateCartItem(CartItem cartItem) {
 		log.info("Updating cart item with ID: {}", cartItem.getCartItemId());
 		return repository.save(cartItem);
 	}
 
+	// Retrieves a cart item by its ID from the repository.
+	// Throws an exception if the cart item is not found.
 	@Override
 	public CartItem getCartItemById(int cartItemId) {
 		log.info("Fetching cart item with ID: {}", cartItemId);
@@ -57,6 +65,8 @@ public class CartItemServiceImpl implements CartItemService {
 				.orElseThrow(() -> new CartItemNotFoundException("Cart item not found with ID: " + cartItemId));
 	}
 
+	// Retrieves all cart items from the repository.
+	// Logs the total number of items retrieved.
 	@Override
 	public List<CartItem> getAllCartItems() {
 		log.info("Fetching all cart items");
@@ -65,6 +75,8 @@ public class CartItemServiceImpl implements CartItemService {
 		return items;
 	}
 
+	// Deletes a cart item by its ID if it exists in the repository.
+	// Logs the attempt and throws an exception if not found.
 	@Override
 	public String deleteCartItemById(int cartItemId) {
 		log.info("Attempting to delete cart item with ID: {}", cartItemId);
@@ -78,6 +90,8 @@ public class CartItemServiceImpl implements CartItemService {
 
 	}
 
+	// Retrieves cart items associated with a specific user ID.
+	// Logs the retrieval attempt and number of items found.
 	@Override
 	public List<CartItem> getCartItemsByUserId(int userId) {
 		log.info("Fetching cart items for user ID: {}", userId);
@@ -86,12 +100,15 @@ public class CartItemServiceImpl implements CartItemService {
 		return items;
 	}
 
+	// Retrieves product details for a given product ID using a Feign client.
 	@Override
 	public ProductDTO fetchProductDetails(int productId) {
 		log.info("Fetching product details for product ID: {}", productId);
 		return productClient.getProductById(productId);
 	}
 
+	// Retrieves cart item details along with its associated product information.
+	// Throws an exception if the cart item is not found.
 	@Override
 	public CartItemWithProductDTO getCartItemWithProduct(int cartItemId) {
 		log.info("Fetching cart item with product for cartItemId={}", cartItemId);
@@ -112,6 +129,9 @@ public class CartItemServiceImpl implements CartItemService {
 		return dto;
 	}
 
+	// Retrieves cart items along with their associated product details for a
+	// specific user ID.
+	// Uses Java Streams to map cart items to DTO objects.
 	@Override
 	public List<CartItemWithProductDTO> getCartItemsWithProductsByUserId(int userId) {
 		log.info("Fetching cart items with products for userId={}", userId);
@@ -130,6 +150,8 @@ public class CartItemServiceImpl implements CartItemService {
 		}).collect(Collectors.toList());
 	}
 
+	// Retrieves cart items associated with a user, including user details.
+	// Iterates through cart items to populate DTO objects with user information.
 	@Override
 	public List<CartItemWithUserDTO> getCartItemsWithUser(int userId) {
 		log.info("Fetching cart items with user for userId={}", userId);

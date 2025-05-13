@@ -20,6 +20,9 @@ public class UserServiceImpl implements UserService {
 
 	private UserRepository repository;
 
+	// Saves a user to the repository.
+	// Logs the attempt to save the user.
+	// Returns a success or failure message based on the save operation.
 	@Override
 	public String saveUser(User user) {
 		log.info("In UserServiceImpl saveUser method....");
@@ -33,6 +36,9 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	// Updates an existing user in the repository.
+	// Logs the update operation.
+	// Returns the updated user object.
 	@Override
 	public User updateUser(User user) {
 		log.info("In UserServiceImpl updateUser method....");
@@ -41,6 +47,9 @@ public class UserServiceImpl implements UserService {
 		return updatedUser;
 	}
 
+	// Retrieves a user by their ID from the repository.
+	// Logs the retrieval operation.
+	// Throws an exception if the user is not found.
 	@Override
 	public User getUserById(int userId) {
 		log.info("In UserServiceImpl getUserById method....");
@@ -48,6 +57,8 @@ public class UserServiceImpl implements UserService {
 				.orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
 	}
 
+	// Retrieves all users from the repository.
+	// Logs the number of users retrieved.
 	@Override
 	public List<User> getAllUsers() {
 		log.info("In UserServiceImpl getAllUsers method....");
@@ -56,6 +67,10 @@ public class UserServiceImpl implements UserService {
 		return users;
 	}
 
+	// Deletes a user by their ID if they exist in the repository.
+	// Logs the deletion attempt and result.
+	// Throws an exception if the user is not found.
+	// Returns a success message if deletion is successful.
 	@Override
 	public String deleteUserById(int userId) {
 		log.info("In UserServiceImpl deleteUserById method....");

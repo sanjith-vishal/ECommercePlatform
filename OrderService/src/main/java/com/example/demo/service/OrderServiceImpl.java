@@ -39,6 +39,8 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private UserClient userClient;
 
+	// Places an order and saves it in the repository.
+	// Logs the order placement and returns a confirmation message.
 	@Override
 	public String placeOrder(Order order) {
 		log.info("In OrderServiceImpl placeOrder method....");
@@ -47,6 +49,8 @@ public class OrderServiceImpl implements OrderService {
 		return "Order placed successfully.";
 	}
 
+	// Updates an existing order in the repository.
+	// Logs the update operation and returns the updated order object.
 	@Override
 	public Order updateOrder(Order order) {
 		log.info("In OrderServiceImpl updateOrder method....");
@@ -55,6 +59,8 @@ public class OrderServiceImpl implements OrderService {
 		return updatedOrder;
 	}
 
+	// Retrieves all orders from the repository.
+	// Logs the total number of orders fetched.
 	@Override
 	public List<Order> getAllOrders() {
 		log.info("Fetching all orders...");
@@ -63,6 +69,8 @@ public class OrderServiceImpl implements OrderService {
 		return orders;
 	}
 
+	// Deletes an order by its ID if it exists in the repository.
+	// Logs the deletion attempt and throws an exception if the order is not found.
 	@Override
 	public String deleteOrderById(int orderId) {
 		log.info("Attempting to delete order with ID: {}", orderId);
@@ -76,6 +84,8 @@ public class OrderServiceImpl implements OrderService {
 		}
 	}
 
+	// Retrieves orders filtered by order status.
+	// Logs the attempt and number of orders found with the specified status.
 	@Override
 	public List<Order> getOrdersByOrderStatus(String status) {
 		log.info("Fetching orders with status: {}", status);
@@ -84,6 +94,9 @@ public class OrderServiceImpl implements OrderService {
 		return orders;
 	}
 
+	// Retrieves orders filtered by payment status.
+	// Logs the attempt and number of orders found with the specified payment
+	// status.
 	@Override
 	public List<Order> getOrdersByPaymentStatus(String status) {
 		log.info("Fetching orders with payment status: {}", status);
@@ -92,6 +105,8 @@ public class OrderServiceImpl implements OrderService {
 		return orders;
 	}
 
+	// Places an order for a user based on their cart items.
+	// Fetches cart items, calculates total price, and saves the order.
 	@Override
 	public String placeOrderByUserId(int userId, Order orderDetails) {
 		log.info("Placing order for user with ID: {}", userId);
@@ -117,6 +132,8 @@ public class OrderServiceImpl implements OrderService {
 		return "Order placed successfully. Order ID: " + newOrder.getOrderId();
 	}
 
+	// Retrieves order details along with associated product information.
+	// Throws an exception if the order is not found.
 	@Override
 	public OrderWithProductDTO getOrderWithProductDetails(int orderId) {
 		log.info("Fetching order with product details for Order ID: {}", orderId);
@@ -147,6 +164,8 @@ public class OrderServiceImpl implements OrderService {
 		return response;
 	}
 
+	// Retrieves orders for a user, including product details.
+	// Iterates through orders and cart items to populate DTO objects.
 	@Override
 	public List<OrderWithProductDetailsDTO> getOrdersByUserId(int userId) {
 		log.info("Fetching orders with product details for user ID: {}", userId);
