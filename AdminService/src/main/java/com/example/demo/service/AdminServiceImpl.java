@@ -17,7 +17,6 @@ import com.example.demo.model.Admin;
 import com.example.demo.repository.AdminRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AdminServiceImpl implements AdminService {

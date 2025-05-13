@@ -17,7 +17,7 @@ import org.mockito.*;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class AdminServiceApplicationTests {
+class AdminServiceApplicationTests {
 
     @Mock
     private AdminRepository repository;
