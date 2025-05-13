@@ -18,7 +18,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class ProductServiceApplicationTests {
+class ProductServiceApplicationTests {
 
     @Mock
     ProductRepository repository;

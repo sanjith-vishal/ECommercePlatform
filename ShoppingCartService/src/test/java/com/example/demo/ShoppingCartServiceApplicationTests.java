@@ -20,7 +20,7 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class ShoppingCartServiceApplicationTests {
+class ShoppingCartServiceApplicationTests {
 
     @Mock
     private ProductClient productClient;
