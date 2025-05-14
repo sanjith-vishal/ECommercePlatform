@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.CartItemDTO;
@@ -23,20 +24,16 @@ public class AdminServiceImpl implements AdminService {
 
 	Logger log = LoggerFactory.getLogger(AdminServiceImpl.class);
 
+	@Autowired
 	private UserClient userClient;
+	@Autowired
 	private ProductClient productClient;
+	@Autowired
 	private OrderClient orderClient;
+	@Autowired
 	private ShoppingCartClient cartClient;
+	@Autowired
 	private AdminRepository repository;
-
-	public AdminServiceImpl(UserClient userClient, ProductClient productClient, OrderClient orderClient,
-			ShoppingCartClient cartClient, AdminRepository repository) {
-		this.userClient = userClient;
-		this.productClient = productClient;
-		this.orderClient = orderClient;
-		this.cartClient = cartClient;
-		this.repository = repository;
-	}
 
 	// Saves an admin entity to the repository.
     // Logs the operation and returns a success message.
